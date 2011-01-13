@@ -1,0 +1,998 @@
+TiAuthenticator
+v7
+r0
+t316649220.310580
+cCheck dependencies
+cProcessInfoPlistFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist iAuthenticator-Info.plist
+cCompileXIB /src/iAuthenticator/Classes/../MainWindow.xib
+cCpResource build/Debug-iphonesimulator/iAuthenticator.app/clock.png clock.png
+cCpResource build/Debug-iphonesimulator/iAuthenticator.app/gear.png gear.png
+cCompileXIB /src/iAuthenticator/Classes/../TokenController.xib
+cCompileXIB /src/iAuthenticator/Classes/SettingsController.xib
+cCompileXIB /src/iAuthenticator/Classes/AuthenticatorController.xib
+cCompileXIB /src/iAuthenticator/Classes/TokenView.xib
+cProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cDataModelCompile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom /src/iAuthenticator/iAuthenticator.xcdatamodel
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o /src/iAuthenticator/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o /src/iAuthenticator/Classes/../Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o /src/iAuthenticator/Classes/../Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsController.o /src/iAuthenticator/Classes/SettingsController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenController.o /src/iAuthenticator/Classes/TokenController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/AuthenticatorController.o /src/iAuthenticator/Classes/AuthenticatorController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsNavController.o /src/iAuthenticator/Classes/SettingsNavController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenView.o /src/iAuthenticator/Classes/TokenView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk
+c000000004B671EAE00000000000000EE
+t1265049262
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004ABDC9B10000000000185440
+t1253951921
+s1594432
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c000000004ABDC9A7000000000000046B
+t1253951911
+s1131
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000004ABDC7C800000000001E8300
+t1253951432
+s1999616
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004ABDC853000000000026EE30
+t1253951571
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004ABDC952000000000027E880
+t1253951826
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004ABDC93F0000000000001355
+t1253951807
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004ABDEE1D0000000000000788
+t1253961245
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004ABDEEE200000000016721E0
+t1253961442
+s23536096
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004CC122A000000000001D6CE0
+t1287725728
+s1928416
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c000000004CC12294000000000000046B
+t1287725716
+s1131
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000004CC121B1000000000023EAC0
+t1287725489
+s2353856
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/src/iAuthenticator/Authenticator.h
+c000000004D2F6E8D00000000000001B9
+t1294954125
+s441
+i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/Authenticator.m
+c000000004D2E1CD3000000000000012E
+t1294867667
+s302
+i"Authenticator.h"
+i"Region.h"
+
+N/src/iAuthenticator/Classes/../Authenticator.h
+c000000004D2F6E8D00000000000001B9
+t1294954125
+s441
+i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/Classes/../Authenticator.m
+c000000004D2F6E8E0000000000000126
+t1294954126
+s294
+i"Authenticator.h"
+i"Region.h"
+
+N/src/iAuthenticator/Classes/../MainWindow.xib
+c000000004D2E442A0000000000006CC3
+t1294877738
+s27843
+
+N/src/iAuthenticator/Classes/../Region.h
+c000000004D2F6E8B000000000000010E
+t1294954123
+s270
+i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/Classes/../Region.m
+c000000004D2F6E8A00000000000000CE
+t1294954122
+s206
+i"Region.h"
+
+N/src/iAuthenticator/Classes/../TokenController.xib
+c000000004D2E256100000000000045E9
+t1294869857
+s17897
+
+N/src/iAuthenticator/Classes/Authenticator.h
+c000000004D2E1B6000000000000001C1
+t1294867296
+s449
+i<Foundation/Foundation.h>
+
+N/src/iAuthenticator/Classes/Authenticator.m
+c000000004D2E1BC1000000000000012D
+t1294867393
+s301
+i"Authenticator.h"
+i"Region.h"
+
+N/src/iAuthenticator/Classes/AuthenticatorController.h
+c000000004D2F6E6F000000000000051D
+t1294954095
+s1309
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/AuthenticatorController.m
+c000000004D2F6E850000000000002673
+t1294954117
+s9843
+i"AuthenticatorController.h"
+i"iAuthenticatorAppDelegate.h"
+i"Authenticator.h"
+
+N/src/iAuthenticator/Classes/AuthenticatorController.xib
+c000000004D2E42020000000000004448
+t1294877186
+s17480
+
+N/src/iAuthenticator/Classes/FirstViewController.h
+c000000004D2E130F00000000000000F6
+t1294865167
+s246
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/FirstViewController.m
+c000000004D2E130F00000000000005BB
+t1294865167
+s1467
+i"FirstViewController.h"
+
+N/src/iAuthenticator/Classes/Region.h
+c000000004D2E17850000000000000115
+t1294866309
+s277
+i<Foundation/Foundation.h>
+
+N/src/iAuthenticator/Classes/Region.m
+c000000004D2E1BD000000000000000D4
+t1294867408
+s212
+i"Region.h"
+
+N/src/iAuthenticator/Classes/SettingsController.h
+c000000004D2F6E670000000000000234
+t1294954087
+s564
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/SettingsController.m
+c000000004D2F6E6500000000000013D9
+t1294954085
+s5081
+i"SettingsController.h"
+i"iAuthenticatorAppDelegate.h"
+i"Authenticator.h"
+i"AuthenticatorController.h"
+i"SettingsNavController.h"
+
+N/src/iAuthenticator/Classes/SettingsController.xib
+c000000004D2E2CFD000000000000432D
+t1294871805
+s17197
+
+N/src/iAuthenticator/Classes/SettingsNavController.h
+c000000004D2F6E870000000000000151
+t1294954119
+s337
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/SettingsNavController.m
+c000000004D2F6E880000000000000BCE
+t1294954120
+s3022
+i"SettingsNavController.h"
+i"iAuthenticatorAppDelegate.h"
+i"Authenticator.h"
+i"AuthenticatorController.h"
+
+N/src/iAuthenticator/Classes/SettingsNavController.xib
+c000000004D2E42EA000000000000187A
+t1294877418
+s6266
+
+N/src/iAuthenticator/Classes/TokenController.h
+c000000004D2F64060000000000000367
+t1294951430
+s871
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/TokenController.m
+c000000004D2F77310000000000001955
+t1294956337
+s6485
+i"iAuthenticatorAppDelegate.h"
+i"Authenticator.h"
+i"TokenView.h"
+
+N/src/iAuthenticator/Classes/TokenController.xib
+c000000004D2E1FF30000000000001868
+t1294868467
+s6248
+
+N/src/iAuthenticator/Classes/TokenView.h
+c000000004D2F73EC00000000000004A2
+t1294955500
+s1186
+i<UIKit/UIKit.h>
+i"Authenticator.h"
+
+N/src/iAuthenticator/Classes/TokenView.m
+c000000004D2F73EB0000000000000C50
+t1294955499
+s3152
+i"TokenView.h"
+
+N/src/iAuthenticator/Classes/TokenView.xib
+c000000004D2F64EF0000000000001643
+t1294951663
+s5699
+
+N/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.h
+c000000004D2F6E9000000000000003DC
+t1294954128
+s988
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m
+c000000004D2F6E91000000000000159D
+t1294954129
+s5533
+i"iAuthenticatorAppDelegate.h"
+i"Region.h"
+i"Authenticator.h"
+
+N/src/iAuthenticator/Classes/keys.xcdatamodel
+c000000004D2E13DA0000000000000088
+t1294865370
+s136
+
+N/src/iAuthenticator/MainWindow.xib
+c000000004D2E442A0000000000006CC3
+t1294877738
+s27843
+
+N/src/iAuthenticator/Region.h
+c000000004D2F6E8B000000000000010E
+t1294954123
+s270
+i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/Region.m
+c000000004D2E1CD300000000000000D6
+t1294867667
+s214
+i"Region.h"
+
+N/src/iAuthenticator/SecondView.xib
+c000000004D2E130F00000000000022F6
+t1294865167
+s8950
+
+N/src/iAuthenticator/Token.xib
+c000000004D2E19CF00000000000014D9
+t1294866895
+s5337
+
+N/src/iAuthenticator/TokenController.xib
+c000000004D2E256100000000000045E9
+t1294869857
+s17897
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
+t2
+s0
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM
+t2
+s0
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/AuthenticatorController.nib
+t1294956417
+s971
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist
+t1294956416
+s619
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/MainWindow.nib
+t1294956417
+s2150
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/PkgInfo
+t1294956416
+s8
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SecondView.nib
+t1294865192
+s2510
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SettingsController.nib
+t1294956417
+s979
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SettingsNavController.nib
+t2
+s0
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Token.nib
+t1294867114
+s960
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/TokenController.nib
+t1294956416
+s1067
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/TokenView.nib
+t1294956418
+s663
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/clock.png
+t1294956416
+s1039
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/gear.png
+t1294956416
+s1129
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
+t2
+s0
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom
+t1294956419
+s1928
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/keys.mom
+t2
+s0
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/token.nib
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator-5C1426A588B8039A.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator-E7F87CA87FF68163.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o
+t1294956419
+s5320
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/AuthenticatorController.o
+t1294956420
+s88968
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/FirstViewController.o
+t1294871738
+s29884
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region-414823EFE67894A9.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region-F6F5BE541D066161.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o
+t1294956419
+s5152
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsController.o
+t1294956420
+s70116
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsNavController.o
+t1294956420
+s54848
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenController.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenView.o
+t2
+s0
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticator.LinkFileList
+c000000004D2F7780000000000000047F
+t1294956416
+s1151
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o
+t1294956419
+s67836
+
+N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o
+t1294956419
+s6264
+
+N/src/iAuthenticator/clock.png
+c000000004B8E891B000000000000040F
+t1267632411
+s1039
+
+N/src/iAuthenticator/gear.png
+c000000004B8E891A0000000000000469
+t1267632410
+s1129
+
+N/src/iAuthenticator/iAuthenticator.xcdatamodel
+c000000004D2E1CF80000000000000088
+t1294867704
+s136
+
+N/src/iAuthenticator/iAuthenticator_Prefix.pch
+c000000004D2E2CB600000000000000E4
+t1294871734
+s228
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/main.m
+c000000004D2F6E930000000000000169
+t1294954131
+s361
+i<UIKit/UIKit.h>
+
+N/src/iAuthenticator/token.xib
+c000000004D2E19CF00000000000014D9
+t1294866895
+s5337
+
+N/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fmmpierliihlgxawjcjocvhfwmbi/iAuthenticator_Prefix.pch.gch
+t1294871893
+s13887728
+
+N/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch.gch
+t1294956419
+s16326640
+
+N/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch.gch
+t1294871738
+s13887728
+
+NiAuthenticator-Info.plist
+c000000004D2E130F000000000000038D
+t1294865167
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies316649216#316649216#0(0"0(0#1#0"8628492448#0"0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator-5C1426A588B8039A.o /src/iAuthenticator/Classes/Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator-E7F87CA87FF68163.o /src/iAuthenticator/Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o /src/iAuthenticator/Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o /src/iAuthenticator/Classes/../Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.844060
+e316649219.938596
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o
+x/src/iAuthenticator/Classes/../Authenticator.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@54"Compile /src/iAuthenticator/Classes/../Authenticator.m316649219#316649219#0(0"0(0#0#46"/src/iAuthenticator/Classes/../Authenticator.m8628110816#1874"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/../Authenticator.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o /src/iAuthenticator/Classes/Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316560210.385224
+e316560210.471079
+r0
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o
+x/src/iAuthenticator/Classes/Authenticator.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /src/iAuthenticator/Classes/Authenticator.m:9:
+o/src/iAuthenticator/Classes/Authenticator.h:13: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Authenticator'
+oIn file included from /src/iAuthenticator/Classes/Authenticator.m:11:
+o/src/iAuthenticator/Classes/Region.h:12: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Region'
+lSLF07#2@51"Compile /src/iAuthenticator/Classes/Authenticator.m316560210#316560210#0(409"In file included from /src/iAuthenticator/Classes/Authenticator.m:9:/src/iAuthenticator/Classes/Authenticator.h:13: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Authenticator'In file included from /src/iAuthenticator/Classes/Authenticator.m:11:/src/iAuthenticator/Classes/Region.h:12: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Region'2(4@86"Cannot find interface declaration for 'NSManagedObject', superclass of 'Authenticator'316560210#69#142#2(7@65"In file included from /src/iAuthenticator/Classes/Authenticator.m316560210#18446744073709551615#0#0(6@43"/src/iAuthenticator/Classes/Authenticator.m316560193#9#0#9#0#0"0(13@133"Cannot find interface declaration for 'NSManagedObject', superclass of 'Authenticator' in /src/iAuthenticator/Classes/Authenticator.h316560210#18446744073709551615#0#0(6@43"/src/iAuthenticator/Classes/Authenticator.h316560096#13#0#13#0#0"0(6@43"/src/iAuthenticator/Classes/Authenticator.h316560096#13#0#13#0#60"cannot find interface declaration for '*', superclass of '*'0(4@79"Cannot find interface declaration for 'NSManagedObject', superclass of 'Region'316560210#281#128#2(7@65"In file included from /src/iAuthenticator/Classes/Authenticator.m316560210#18446744073709551615#0#0(6@43"/src/iAuthenticator/Classes/Authenticator.m316560193#11#0#11#0#0"0(13@119"Cannot find interface declaration for 'NSManagedObject', superclass of 'Region' in /src/iAuthenticator/Classes/Region.h316560210#18446744073709551615#0#0(6@36"/src/iAuthenticator/Classes/Region.h316559109#12#0#12#0#0"0(6@36"/src/iAuthenticator/Classes/Region.h316559109#12#0#12#0#60"cannot find interface declaration for '*', superclass of '*'0(0#0#43"/src/iAuthenticator/Classes/Authenticator.m4300885448#1816"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/Authenticator.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator.o1#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/AuthenticatorController.o /src/iAuthenticator/Classes/AuthenticatorController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649220.014165
+e316649220.310498
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/AuthenticatorController.o
+x/src/iAuthenticator/Classes/AuthenticatorController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/src/iAuthenticator/Classes/AuthenticatorController.m: In function '-[AuthenticatorController managedObjectContext]':
+o/src/iAuthenticator/Classes/AuthenticatorController.m:20: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol
+o/src/iAuthenticator/Classes/AuthenticatorController.m: In function '-[AuthenticatorController managedObjectModel]':
+o/src/iAuthenticator/Classes/AuthenticatorController.m:25: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol
+lSLF07#2@61"Compile /src/iAuthenticator/Classes/AuthenticatorController.m316649220#316649220#0(560"/src/iAuthenticator/Classes/AuthenticatorController.m: In function '-[AuthenticatorController managedObjectContext]':/src/iAuthenticator/Classes/AuthenticatorController.m:20: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol/src/iAuthenticator/Classes/AuthenticatorController.m: In function '-[AuthenticatorController managedObjectModel]':/src/iAuthenticator/Classes/AuthenticatorController.m:25: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol2(22@95"Type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol316649220#118#163#0(6@53"/src/iAuthenticator/Classes/AuthenticatorController.m316646917#20#0#20#0#45"type '*' does not conform to the '*' protocol0(22@95"Type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol316649220#397#163#0(6@53"/src/iAuthenticator/Classes/AuthenticatorController.m316646917#25#0#25#0#45"type '*' does not conform to the '*' protocol0(0#0#53"/src/iAuthenticator/Classes/AuthenticatorController.m8608974432#1891"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/AuthenticatorController.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/AuthenticatorController.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/FirstViewController.o /src/iAuthenticator/Classes/FirstViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316564538.762702
+e316564538.897530
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/FirstViewController.o
+x/src/iAuthenticator/Classes/FirstViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /src/iAuthenticator/Classes/FirstViewController.m316564538#316564538#0(0"0(0#0#49"/src/iAuthenticator/Classes/FirstViewController.m4300885448#1828"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/FirstViewController.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/FirstViewController.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region-414823EFE67894A9.o /src/iAuthenticator/Classes/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region-F6F5BE541D066161.o /src/iAuthenticator/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o /src/iAuthenticator/Classes/../Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.665557
+e316649219.843948
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o
+x/src/iAuthenticator/Classes/../Region.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@47"Compile /src/iAuthenticator/Classes/../Region.m316649219#316649219#0(0"0(0#0#39"/src/iAuthenticator/Classes/../Region.m8625746752#1860"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/../Region.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o /src/iAuthenticator/Classes/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316560210.386912
+e316560210.516087
+r0
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o
+x/src/iAuthenticator/Classes/Region.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /src/iAuthenticator/Classes/Region.m:9:
+o/src/iAuthenticator/Classes/Region.h:12: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Region'
+lSLF07#2@44"Compile /src/iAuthenticator/Classes/Region.m316560210#316560210#0(190"In file included from /src/iAuthenticator/Classes/Region.m:9:/src/iAuthenticator/Classes/Region.h:12: error: cannot find interface declaration for 'NSManagedObject', superclass of 'Region'1(4@79"Cannot find interface declaration for 'NSManagedObject', superclass of 'Region'316560210#62#128#2(7@58"In file included from /src/iAuthenticator/Classes/Region.m316560210#18446744073709551615#0#0(6@36"/src/iAuthenticator/Classes/Region.m316560208#9#0#9#0#0"0(13@119"Cannot find interface declaration for 'NSManagedObject', superclass of 'Region' in /src/iAuthenticator/Classes/Region.h316560210#18446744073709551615#0#0(6@36"/src/iAuthenticator/Classes/Region.h316559109#12#0#12#0#0"0(6@36"/src/iAuthenticator/Classes/Region.h316559109#12#0#12#0#60"cannot find interface declaration for '*', superclass of '*'0(0#0#36"/src/iAuthenticator/Classes/Region.m4300885448#1802"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/Region.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o1#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Region.o /src/iAuthenticator/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsController.o /src/iAuthenticator/Classes/SettingsController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.916006
+e316649220.114854
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsController.o
+x/src/iAuthenticator/Classes/SettingsController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/src/iAuthenticator/Classes/SettingsController.m: In function '-[SettingsController loadData]':
+o/src/iAuthenticator/Classes/SettingsController.m:31: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol
+lSLF07#2@56"Compile /src/iAuthenticator/Classes/SettingsController.m316649219#316649220#0(254"/src/iAuthenticator/Classes/SettingsController.m: In function '-[SettingsController loadData]':/src/iAuthenticator/Classes/SettingsController.m:31: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol1(22@95"Type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol316649219#96#158#0(6@48"/src/iAuthenticator/Classes/SettingsController.m316646885#31#0#31#0#45"type '*' does not conform to the '*' protocol0(0#0#48"/src/iAuthenticator/Classes/SettingsController.m8626961024#1881"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/SettingsController.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsController.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsNavController.o /src/iAuthenticator/Classes/SettingsNavController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649220.115036
+e316649220.218454
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsNavController.o
+x/src/iAuthenticator/Classes/SettingsNavController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /src/iAuthenticator/Classes/SettingsNavController.m316649220#316649220#0(0"0(0#0#51"/src/iAuthenticator/Classes/SettingsNavController.m8628792736#1887"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/SettingsNavController.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/SettingsNavController.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenController.o /src/iAuthenticator/Classes/TokenController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.938709
+e316649220.013891
+r0
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenController.o
+x/src/iAuthenticator/Classes/TokenController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/src/iAuthenticator/Classes/TokenController.m:14: warning: cannot find interface declaration for 'TokenController'
+o/src/iAuthenticator/Classes/TokenController.m:14: error: no declaration of property 'scrollView' found in the interface
+o/src/iAuthenticator/Classes/TokenController.m:15: error: no declaration of property 'pageControl' found in the interface
+o/src/iAuthenticator/Classes/TokenController.m:15: error: no declaration of property 'needsReload' found in the interface
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidLoad]':
+o/src/iAuthenticator/Classes/TokenController.m:19: error: 'needsReload' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:19: error: (Each undeclared identifier is reported only once
+o/src/iAuthenticator/Classes/TokenController.m:19: error: for each function it appears in.)
+o/src/iAuthenticator/Classes/TokenController.m:20: error: 'tokenViews' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:21: warning: 'TokenController' may not respond to '-setup'
+o/src/iAuthenticator/Classes/TokenController.m:21: warning: (Messages without a matching method signature
+o/src/iAuthenticator/Classes/TokenController.m:21: warning: will be assumed to return 'id' and accept
+o/src/iAuthenticator/Classes/TokenController.m:21: warning: '...' as arguments.)
+o/src/iAuthenticator/Classes/TokenController.m:22: warning: 'TokenController' may not respond to '-restoreSavedView'
+o/src/iAuthenticator/Classes/TokenController.m:26: error: no super class declared in @interface for 'TokenController'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController authenticatorsChanged:]':
+o/src/iAuthenticator/Classes/TokenController.m:31: error: 'needsReload' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController saveAction]':
+o/src/iAuthenticator/Classes/TokenController.m:37: error: request for member 'managedObjectContext' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController restoreSavedView]':
+o/src/iAuthenticator/Classes/TokenController.m:51: error: 'pageControl' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:52: error: 'scrollView' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController managedObjectContext]':
+o/src/iAuthenticator/Classes/TokenController.m:60: error: 'AuthenticatorWatchAppDelegate' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:60: error: 'appDelegate' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:62: warning: control reaches end of non-void function
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController setup]':
+o/src/iAuthenticator/Classes/TokenController.m:76: error: 'scrollView' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:78: error: request for member 'scrollView' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m:86: warning: 'TokenController' may not respond to '-reloadData'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController reloadData]':
+o/src/iAuthenticator/Classes/TokenController.m:91: error: 'needsReload' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:93: error: 'tokenViews' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:94: error: 'scrollView' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:101: error: request for member 'managedObjectContext' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m:111: error: request for member 'managedObjectContext' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m:155: error: request for member 'pageControl' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m:156: warning: 'TokenController' may not respond to '-tokenView'
+o/src/iAuthenticator/Classes/TokenController.m:156: warning: no '-startTimer' method found
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController tokenView]':
+o/src/iAuthenticator/Classes/TokenController.m:161: error: 'tokenViews' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:162: error: request for member 'pageControl' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewWillAppear:]':
+o/src/iAuthenticator/Classes/TokenController.m:168: error: 'needsReload' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:171: warning: 'TokenView' may not respond to '-startTimer'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidDisappear:]':
+o/src/iAuthenticator/Classes/TokenController.m:176: warning: 'TokenView' may not respond to '-stopTimer'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController scrollViewDidScroll:]':
+o/src/iAuthenticator/Classes/TokenController.m:183: error: 'pageControlIsChangingPage' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:192: error: 'pageControl' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:193: warning: 'TokenView' may not respond to '-stopTimer'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController scrollViewDidEndDecelerating:]':
+o/src/iAuthenticator/Classes/TokenController.m:204: warning: 'TokenView' may not respond to '-startTimer'
+o/src/iAuthenticator/Classes/TokenController.m:205: error: 'pageControlIsChangingPage' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController changePage:]':
+o/src/iAuthenticator/Classes/TokenController.m:215: error: 'scrollView' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:216: error: 'pageControl' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:224: error: 'pageControlIsChangingPage' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController didReceiveMemoryWarning]':
+o/src/iAuthenticator/Classes/TokenController.m:230: error: no super class declared in @interface for 'TokenController'
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidUnload]':
+o/src/iAuthenticator/Classes/TokenController.m:238: error: 'tokenViews' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:239: error: 'scrollView' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m:240: error: 'pageControl' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController dealloc]':
+o/src/iAuthenticator/Classes/TokenController.m:246: error: no super class declared in @interface for 'TokenController'
+lSLF07#2@53"Compile /src/iAuthenticator/Classes/TokenController.m316649219#316649220#0(7215"/src/iAuthenticator/Classes/TokenController.m:14: warning: cannot find interface declaration for 'TokenController'/src/iAuthenticator/Classes/TokenController.m:14: error: no declaration of property 'scrollView' found in the interface/src/iAuthenticator/Classes/TokenController.m:15: error: no declaration of property 'pageControl' found in the interface/src/iAuthenticator/Classes/TokenController.m:15: error: no declaration of property 'needsReload' found in the interface/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidLoad]':/src/iAuthenticator/Classes/TokenController.m:19: error: 'needsReload' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:19: error: (Each undeclared identifier is reported only once/src/iAuthenticator/Classes/TokenController.m:19: error: for each function it appears in.)/src/iAuthenticator/Classes/TokenController.m:20: error: 'tokenViews' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:21: warning: 'TokenController' may not respond to '-setup'/src/iAuthenticator/Classes/TokenController.m:21: warning: (Messages without a matching method signature/src/iAuthenticator/Classes/TokenController.m:21: warning: will be assumed to return 'id' and accept/src/iAuthenticator/Classes/TokenController.m:21: warning: '...' as arguments.)/src/iAuthenticator/Classes/TokenController.m:22: warning: 'TokenController' may not respond to '-restoreSavedView'/src/iAuthenticator/Classes/TokenController.m:26: error: no super class declared in @interface for 'TokenController'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController authenticatorsChanged:]':/src/iAuthenticator/Classes/TokenController.m:31: error: 'needsReload' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController saveAction]':/src/iAuthenticator/Classes/TokenController.m:37: error: request for member 'managedObjectContext' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController restoreSavedView]':/src/iAuthenticator/Classes/TokenController.m:51: error: 'pageControl' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:52: error: 'scrollView' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController managedObjectContext]':/src/iAuthenticator/Classes/TokenController.m:60: error: 'AuthenticatorWatchAppDelegate' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:60: error: 'appDelegate' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:62: warning: control reaches end of non-void function/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController setup]':/src/iAuthenticator/Classes/TokenController.m:76: error: 'scrollView' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:78: error: request for member 'scrollView' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m:86: warning: 'TokenController' may not respond to '-reloadData'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController reloadData]':/src/iAuthenticator/Classes/TokenController.m:91: error: 'needsReload' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:93: error: 'tokenViews' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:94: error: 'scrollView' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:101: error: request for member 'managedObjectContext' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m:111: error: request for member 'managedObjectContext' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m:155: error: request for member 'pageControl' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m:156: warning: 'TokenController' may not respond to '-tokenView'/src/iAuthenticator/Classes/TokenController.m:156: warning: no '-startTimer' method found/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController tokenView]':/src/iAuthenticator/Classes/TokenController.m:161: error: 'tokenViews' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:162: error: request for member 'pageControl' in something not a structure or union/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewWillAppear:]':/src/iAuthenticator/Classes/TokenController.m:168: error: 'needsReload' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:171: warning: 'TokenView' may not respond to '-startTimer'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidDisappear:]':/src/iAuthenticator/Classes/TokenController.m:176: warning: 'TokenView' may not respond to '-stopTimer'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController scrollViewDidScroll:]':/src/iAuthenticator/Classes/TokenController.m:183: error: 'pageControlIsChangingPage' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:192: error: 'pageControl' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:193: warning: 'TokenView' may not respond to '-stopTimer'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController scrollViewDidEndDecelerating:]':/src/iAuthenticator/Classes/TokenController.m:204: warning: 'TokenView' may not respond to '-startTimer'/src/iAuthenticator/Classes/TokenController.m:205: error: 'pageControlIsChangingPage' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController changePage:]':/src/iAuthenticator/Classes/TokenController.m:215: error: 'scrollView' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:216: error: 'pageControl' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:224: error: 'pageControlIsChangingPage' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController didReceiveMemoryWarning]':/src/iAuthenticator/Classes/TokenController.m:230: error: no super class declared in @interface for 'TokenController'/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController viewDidUnload]':/src/iAuthenticator/Classes/TokenController.m:238: error: 'tokenViews' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:239: error: 'scrollView' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m:240: error: 'pageControl' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenController.m: In function '-[TokenController dealloc]':/src/iAuthenticator/Classes/TokenController.m:246: error: no super class declared in @interface for 'TokenController'46(22@55"Cannot find interface declaration for 'TokenController'316649219#0#115#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#14#0#14#0#0"0(4@62"No declaration of property 'scrollView' found in the interface316649219#115#120#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#14#0#14#0#0"0(4@63"No declaration of property 'pageControl' found in the interface316649219#235#121#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#15#0#15#0#0"0(4@63"No declaration of property 'needsReload' found in the interface316649219#356#121#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#15#0#15#0#0"0(4@53"'needsReload' undeclared (first use in this function)316649219#570#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#19#0#19#0#43"'*' undeclared (first use in this function)0(4@52"'tokenViews' undeclared (first use in this function)316649219#879#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#20#0#20#0#43"'*' undeclared (first use in this function)0(22@45"'TokenController' may not respond to '-setup'316649219#989#105#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#21#0#21#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)316649219#1094#105#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#21#0#21#0#0"0(22@56"'TokenController' may not respond to '-restoreSavedView'316649219#1380#116#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#22#0#22#0#26"'*' may not respond to '*'0(4@59"No super class declared in @interface for 'TokenController'316649219#1496#117#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#26#0#26#0#0"0(4@53"'needsReload' undeclared (first use in this function)316649219#1717#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#31#0#31#0#43"'*' undeclared (first use in this function)0(4@79"Request for member 'managedObjectContext' in something not a structure or union316649219#1920#137#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#37#0#37#0#0"0(4@53"'pageControl' undeclared (first use in this function)316649219#2155#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#51#0#51#0#43"'*' undeclared (first use in this function)0(4@52"'scrollView' undeclared (first use in this function)316649219#2266#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#52#0#52#0#43"'*' undeclared (first use in this function)0(4@71"'AuthenticatorWatchAppDelegate' undeclared (first use in this function)316649219#2478#129#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#60#0#60#0#43"'*' undeclared (first use in this function)0(4@53"'appDelegate' undeclared (first use in this function)316649219#2607#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#60#0#60#0#43"'*' undeclared (first use in this function)0(22@40"Control reaches end of non-void function316649219#2718#100#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#62#0#62#0#40"control reaches end of non-void function0(4@52"'scrollView' undeclared (first use in this function)316649219#2905#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#76#0#76#0#43"'*' undeclared (first use in this function)0(4@69"Request for member 'scrollView' in something not a structure or union316649219#3015#127#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#78#0#78#0#0"0(22@50"'TokenController' may not respond to '-reloadData'316649219#3142#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#86#0#86#0#26"'*' may not respond to '*'0(4@53"'needsReload' undeclared (first use in this function)316649219#3344#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#91#0#91#0#43"'*' undeclared (first use in this function)0(4@52"'tokenViews' undeclared (first use in this function)316649219#3455#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#93#0#93#0#43"'*' undeclared (first use in this function)0(4@52"'scrollView' undeclared (first use in this function)316649219#3565#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#94#0#94#0#43"'*' undeclared (first use in this function)0(4@79"Request for member 'managedObjectContext' in something not a structure or union316649219#3675#138#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#101#0#101#0#0"0(4@79"Request for member 'managedObjectContext' in something not a structure or union316649219#3813#138#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#111#0#111#0#0"0(4@70"Request for member 'pageControl' in something not a structure or union316649219#3951#129#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#155#0#155#0#0"0(22@49"'TokenController' may not respond to '-tokenView'316649219#4080#110#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#156#0#156#0#26"'*' may not respond to '*'0(22@29"No '-startTimer' method found316649219#4190#90#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#156#0#156#0#19"no '*' method found0(4@52"'tokenViews' undeclared (first use in this function)316649219#4371#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#161#0#161#0#43"'*' undeclared (first use in this function)0(4@70"Request for member 'pageControl' in something not a structure or union316649219#4482#129#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#162#0#162#0#0"0(4@53"'needsReload' undeclared (first use in this function)316649219#4708#112#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#168#0#168#0#43"'*' undeclared (first use in this function)0(22@44"'TokenView' may not respond to '-startTimer'316649219#4820#105#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#171#0#171#0#26"'*' may not respond to '*'0(22@43"'TokenView' may not respond to '-stopTimer'316649219#5024#104#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#176#0#176#0#26"'*' may not respond to '*'0(4@67"'pageControlIsChangingPage' undeclared (first use in this function)316649219#5230#126#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#183#0#183#0#43"'*' undeclared (first use in this function)0(4@53"'pageControl' undeclared (first use in this function)316649219#5356#112#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#192#0#192#0#43"'*' undeclared (first use in this function)0(22@43"'TokenView' may not respond to '-stopTimer'316649219#5468#104#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#193#0#193#0#26"'*' may not respond to '*'0(22@44"'TokenView' may not respond to '-startTimer'316649219#5683#105#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#204#0#204#0#26"'*' may not respond to '*'0(4@67"'pageControlIsChangingPage' undeclared (first use in this function)316649219#5788#126#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#205#0#205#0#43"'*' undeclared (first use in this function)0(4@52"'scrollView' undeclared (first use in this function)316649219#6007#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#215#0#215#0#43"'*' undeclared (first use in this function)0(4@53"'pageControl' undeclared (first use in this function)316649219#6118#112#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#216#0#216#0#43"'*' undeclared (first use in this function)0(4@67"'pageControlIsChangingPage' undeclared (first use in this function)316649219#6230#126#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#224#0#224#0#43"'*' undeclared (first use in this function)0(4@59"No super class declared in @interface for 'TokenController'316649219#6461#118#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#230#0#230#0#0"0(4@52"'tokenViews' undeclared (first use in this function)316649219#6674#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#238#0#238#0#43"'*' undeclared (first use in this function)0(4@52"'scrollView' undeclared (first use in this function)316649219#6785#111#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#239#0#239#0#43"'*' undeclared (first use in this function)0(4@53"'pageControl' undeclared (first use in this function)316649219#6896#112#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#240#0#240#0#43"'*' undeclared (first use in this function)0(4@59"No super class declared in @interface for 'TokenController'316649219#7097#118#0(6@45"/src/iAuthenticator/Classes/TokenController.m316649137#246#0#246#0#0"0(0#0#45"/src/iAuthenticator/Classes/TokenController.m8626524992#1875"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/TokenController.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenController.o1#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenView.o /src/iAuthenticator/Classes/TokenView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649220.218641
+e316649220.306178
+r0
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenView.o
+x/src/iAuthenticator/Classes/TokenView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView initWithoutAuthenticator]':
+o/src/iAuthenticator/Classes/TokenView.m:35: error: expected ';' before 'code2'
+o/src/iAuthenticator/Classes/TokenView.m:41: warning: control reaches end of non-void function
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView initWithAuthenticator:]':
+o/src/iAuthenticator/Classes/TokenView.m:56: error: expected ';' before 'codes'
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView didMoveToSuperview]':
+o/src/iAuthenticator/Classes/TokenView.m:63: warning: 'TokenView' may not respond to '-updateTime'
+o/src/iAuthenticator/Classes/TokenView.m:63: warning: (Messages without a matching method signature
+o/src/iAuthenticator/Classes/TokenView.m:63: warning: will be assumed to return 'id' and accept
+o/src/iAuthenticator/Classes/TokenView.m:63: warning: '...' as arguments.)
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView updateProgress]':
+o/src/iAuthenticator/Classes/TokenView.m:96: error: invalid operands to binary % (have 'NSTimeInterval' and 'int')
+o/src/iAuthenticator/Classes/TokenView.m:97: error: expected ';' before '}' token
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView setAuthenticator:]':
+o/src/iAuthenticator/Classes/TokenView.m:120: error: 'label' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenView.m:120: error: (Each undeclared identifier is reported only once
+o/src/iAuthenticator/Classes/TokenView.m:120: error: for each function it appears in.)
+o/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView dealloc]':
+o/src/iAuthenticator/Classes/TokenView.m:137: error: 'timer' undeclared (first use in this function)
+o/src/iAuthenticator/Classes/TokenView.m:140: error: request for member 'label' in something not a structure or union
+o/src/iAuthenticator/Classes/TokenView.m:139: error: accessing unknown 'contentView' getter method
+lSLF07#2@47"Compile /src/iAuthenticator/Classes/TokenView.m316649220#316649220#0(1938"/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView initWithoutAuthenticator]':/src/iAuthenticator/Classes/TokenView.m:35: error: expected ';' before 'code2'/src/iAuthenticator/Classes/TokenView.m:41: warning: control reaches end of non-void function/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView initWithAuthenticator:]':/src/iAuthenticator/Classes/TokenView.m:56: error: expected ';' before 'codes'/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView didMoveToSuperview]':/src/iAuthenticator/Classes/TokenView.m:63: warning: 'TokenView' may not respond to '-updateTime'/src/iAuthenticator/Classes/TokenView.m:63: warning: (Messages without a matching method signature/src/iAuthenticator/Classes/TokenView.m:63: warning: will be assumed to return 'id' and accept/src/iAuthenticator/Classes/TokenView.m:63: warning: '...' as arguments.)/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView updateProgress]':/src/iAuthenticator/Classes/TokenView.m:96: error: invalid operands to binary % (have 'NSTimeInterval' and 'int')/src/iAuthenticator/Classes/TokenView.m:97: error: expected ';' before '}' token/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView setAuthenticator:]':/src/iAuthenticator/Classes/TokenView.m:120: error: 'label' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenView.m:120: error: (Each undeclared identifier is reported only once/src/iAuthenticator/Classes/TokenView.m:120: error: for each function it appears in.)/src/iAuthenticator/Classes/TokenView.m: In function '-[TokenView dealloc]':/src/iAuthenticator/Classes/TokenView.m:137: error: 'timer' undeclared (first use in this function)/src/iAuthenticator/Classes/TokenView.m:140: error: request for member 'label' in something not a structure or union/src/iAuthenticator/Classes/TokenView.m:139: error: accessing unknown 'contentView' getter method11(4@27"Expected ';' before 'code2'316649220#94#79#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#35#0#35#0#19"expected * before *0(22@40"Control reaches end of non-void function316649220#173#94#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#41#0#41#0#40"control reaches end of non-void function0(4@27"Expected ';' before 'codes'316649220#359#79#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#56#0#56#0#19"expected * before *0(22@44"'TokenView' may not respond to '-updateTime'316649220#526#98#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#63#0#63#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)316649220#624#99#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#63#0#63#0#0"0(4@62"Invalid operands to binary % (have 'NSTimeInterval' and 'int')316649220#976#114#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#96#0#96#0#0"0(4@29"Expected ';' before '}' token316649220#1090#81#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#97#0#97#0#19"expected * before *0(4@47"'label' undeclared (first use in this function)316649220#1258#100#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#120#0#120#0#43"'*' undeclared (first use in this function)0(4@47"'timer' undeclared (first use in this function)316649220#1623#100#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#137#0#137#0#43"'*' undeclared (first use in this function)0(4@64"Request for member 'label' in something not a structure or union316649220#1723#117#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#140#0#140#0#0"0(4@45"Accessing unknown 'contentView' getter method316649220#1840#98#0(6@39"/src/iAuthenticator/Classes/TokenView.m316648299#139#0#139#0#0"0(0#0#39"/src/iAuthenticator/Classes/TokenView.m8626524416#1863"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/TokenView.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/TokenView.o1#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.623778
+e316649219.915890
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o
+x/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@63"Compile /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m316649219#316649219#0(0"0(0#0#55"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m8624802144#1895"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o0#
+
+CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o /src/iAuthenticator/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649219.510841
+e316649219.665454
+r1
+xCompileC
+xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o
+x/src/iAuthenticator/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@34"Compile /src/iAuthenticator/main.m316649219#316649219#0(0"0(0#0#26"/src/iAuthenticator/main.m8626991712#1845"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch -c /src/iAuthenticator/main.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /src/iAuthenticator/Classes/../MainWindow.xib
+s316649216.370929
+e316649217.086262
+r1
+xCompileXIB
+x/src/iAuthenticator/Classes/../MainWindow.xib
+lSLF07#2@36"CompileXIB Classes/../MainWindow.xib316649216#316649217#0(0"0(0#0#45"/src/iAuthenticator/Classes/../MainWindow.xib8624786464#531"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/MainWindow.nib /src/iAuthenticator/Classes/../MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/Classes/../TokenController.xib
+s316649216.399566
+e316649217.189700
+r1
+xCompileXIB
+x/src/iAuthenticator/Classes/../TokenController.xib
+lSLF07#2@41"CompileXIB Classes/../TokenController.xib316649216#316649217#0(0"0(0#0#50"/src/iAuthenticator/Classes/../TokenController.xib8623378208#541"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/TokenController.nib /src/iAuthenticator/Classes/../TokenController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/Classes/AuthenticatorController.xib
+s316649217.189789
+e316649218.245335
+r1
+xCompileXIB
+x/src/iAuthenticator/Classes/AuthenticatorController.xib
+lSLF07#2@46"CompileXIB Classes/AuthenticatorController.xib316649217#316649218#0(0"0(0#0#55"/src/iAuthenticator/Classes/AuthenticatorController.xib8626494432#554"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/AuthenticatorController.nib /src/iAuthenticator/Classes/AuthenticatorController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/Classes/SettingsController.xib
+s316649217.086583
+e316649217.888563
+r1
+xCompileXIB
+x/src/iAuthenticator/Classes/SettingsController.xib
+lSLF07#2@41"CompileXIB Classes/SettingsController.xib316649217#316649217#0(0"0(0#0#50"/src/iAuthenticator/Classes/SettingsController.xib8626870176#544"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SettingsController.nib /src/iAuthenticator/Classes/SettingsController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/Classes/SettingsNavController.xib
+r0
+
+CCompileXIB /src/iAuthenticator/Classes/TokenController.xib
+r0
+
+CCompileXIB /src/iAuthenticator/Classes/TokenView.xib
+s316649217.888734
+e316649218.289249
+r1
+xCompileXIB
+x/src/iAuthenticator/Classes/TokenView.xib
+lSLF07#2@32"CompileXIB Classes/TokenView.xib316649217#316649218#0(0"0(0#0#41"/src/iAuthenticator/Classes/TokenView.xib8630057664#526"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/TokenView.nib /src/iAuthenticator/Classes/TokenView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/MainWindow.xib
+s316642847.649965
+e316642849.339305
+r1
+xCompileXIB
+x/src/iAuthenticator/MainWindow.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@25"CompileXIB MainWindow.xib316642847#316642849#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#34"/src/iAuthenticator/MainWindow.xib8609264288#520"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/MainWindow.nib /src/iAuthenticator/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/SecondView.xib
+s316557991.012645
+e316557992.296174
+r1
+xCompileXIB
+x/src/iAuthenticator/SecondView.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@25"CompileXIB SecondView.xib316557991#316557992#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#34"/src/iAuthenticator/SecondView.xib4300885448#432"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SecondView.nib /src/iAuthenticator/SecondView.xib0#
+
+CCompileXIB /src/iAuthenticator/Token.xib
+s316559913.000018
+e316559914.764336
+r1
+xCompileXIB
+x/src/iAuthenticator/Token.xib
+lSLF07#2@20"CompileXIB Token.xib316559913#316559914#0(0"0(0#0#29"/src/iAuthenticator/Token.xib4300885448#422"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Token.nib /src/iAuthenticator/Token.xib0#
+
+CCompileXIB /src/iAuthenticator/TokenController.xib
+s316642847.669980
+e316642848.717664
+r1
+xCompileXIB
+x/src/iAuthenticator/TokenController.xib
+lSLF07#2@30"CompileXIB TokenController.xib316642847#316642848#0(0"0(0#0#39"/src/iAuthenticator/TokenController.xib8608774144#530"    cd /src/iAuthenticator    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/TokenController.nib /src/iAuthenticator/TokenController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CCompileXIB /src/iAuthenticator/token.xib
+r0
+
+CCpResource build/Debug-iphonesimulator/iAuthenticator.app/clock.png clock.png
+s316649216.372018
+e316649216.405378
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/iAuthenticator.app/clock.png
+xclock.png
+lSLF07#2@14"Copy clock.png316649216#316649216#0(0"0(0#0#29"/src/iAuthenticator/clock.png8624472192#417"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /src/iAuthenticator/clock.png /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
+
+CCpResource build/Debug-iphonesimulator/iAuthenticator.app/gear.png gear.png
+s316649216.383981
+e316649216.405544
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/iAuthenticator.app/gear.png
+xgear.png
+lSLF07#2@13"Copy gear.png316649216#316649216#0(0"0(0#0#28"/src/iAuthenticator/gear.png8623793056#416"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /src/iAuthenticator/gear.png /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
+
+CDataModelCompile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom /src/iAuthenticator/iAuthenticator.xcdatamodel
+s316649219.509665
+e316649219.623639
+r1
+xDataModelCompile
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom
+x/src/iAuthenticator/iAuthenticator.xcdatamodel
+o/src/iAuthenticator/iAuthenticator.xcdatamodel:Authenticator.region: warning: Authenticator.region -- relationship does not have an inverse 
+lSLF07#2@54"Compile /src/iAuthenticator/iAuthenticator.xcdatamodel316649219#316649219#0(141"/src/iAuthenticator/iAuthenticator.xcdatamodel:Authenticator.region: warning: Authenticator.region -- relationship does not have an inverse 1(22@62"Authenticator.region -- relationship does not have an inverse 316649219#18446744073709551615#0#0(6@46"/src/iAuthenticator/iAuthenticator.xcdatamodel316560504#0#0#0#0#0"0(0#0#46"/src/iAuthenticator/iAuthenticator.xcdatamodel8627223584#348"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/momc -XD_MOMC_TARGET_VERSION=10.6 /src/iAuthenticator/iAuthenticator.xcdatamodel /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom0#
+
+CDataModelCompile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/keys.mom /src/iAuthenticator/Classes/keys.xcdatamodel
+r0
+
+CGenerateDSYMFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
+s316644098.761607
+e316644098.789835
+r1
+xGenerateDSYMFile
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
+lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/iAuthenticator.app.dSYM build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator316644098#316644098#0(0"0(0#0#81"/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator8625062528#347"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM0#
+
+CLd /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator normal i386
+s316644098.730488
+e316644098.761416
+r1
+xLd
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
+xnormal
+xi386
+lSLF07#2@86"Link /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator316644098#316644098#0(0"0(0#0#0"8625848288#886"    cd /src/iAuthenticator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/src/iAuthenticator/build/Debug-iphonesimulator -F/src/iAuthenticator/build/Debug-iphonesimulator -filelist /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticator.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreFoundation -framework CoreData -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator0#
+
+CProcessInfoPlistFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist iAuthenticator-Info.plist
+s316649216.363341
+e316649216.370710
+r1
+xProcessInfoPlistFile
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist
+xiAuthenticator-Info.plist
+lSLF07#2@33"Process iAuthenticator-Info.plist316649216#316649216#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator-Info.plist8626349536#443"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility iAuthenticator-Info.plist -genpkginfo /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist0#
+
+CProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fmmpierliihlgxawjcjocvhfwmbi/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s316564692.760484
+e316564693.720201
+r1
+xProcessPCH
+x/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fmmpierliihlgxawjcjocvhfwmbi/iAuthenticator_Prefix.pch.gch
+xiAuthenticator_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile iAuthenticator_Prefix.pch316564692#316564693#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator_Prefix.pch4300885448#1694"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -c /src/iAuthenticator/iAuthenticator_Prefix.pch -o /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fmmpierliihlgxawjcjocvhfwmbi/iAuthenticator_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s316649218.289407
+e316649219.509464
+r1
+xProcessPCH
+x/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch.gch
+xiAuthenticator_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile iAuthenticator_Prefix.pch316649218#316649219#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator_Prefix.pch8628269888#1749"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -c /src/iAuthenticator/iAuthenticator_Prefix.pch -o /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-ftvgbhasfldfmaerxhliqfshbobd/iAuthenticator_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s316564537.149927
+e316564538.701605
+r1
+xProcessPCH
+x/var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch.gch
+xiAuthenticator_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile iAuthenticator_Prefix.pch316564537#316564538#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator_Prefix.pch4300885448#1694"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-generated-files.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-own-target-headers.hmap -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-all-target-headers.hmap -iquote /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator-project-headers.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -c /src/iAuthenticator/iAuthenticator_Prefix.pch -o /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-fvthwcqaiiavecabokftzvpkaenz/iAuthenticator_Prefix.pch.gch0#
+
+CTouch /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
+s316644098.789923
+e316644098.792540
+r1
+xTouch
+x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
+lSLF07#2@72"Touch /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app316644098#316644098#0(0"0(0#0#0"8624812384#247"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
+

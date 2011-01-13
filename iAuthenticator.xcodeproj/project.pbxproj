@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* iAuthenticatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iAuthenticatorAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		C90CE1A712DE6C6D006DA8C5 /* AuthenticatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90CE1A512DE6C6D006DA8C5 /* AuthenticatorController.m */; };
+		C90CE1A812DE6C6D006DA8C5 /* AuthenticatorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90CE1A612DE6C6D006DA8C5 /* AuthenticatorController.xib */; };
+		C90CE32F12DE7A6A006DA8C5 /* SettingsNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90CE32D12DE7A6A006DA8C5 /* SettingsNavController.m */; };
+		C933D8A112DF9C5F00A797ED /* TokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C933D8A012DF9C5F00A797ED /* TokenView.m */; };
+		C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933D8A212DF9C6F00A797ED /* TokenView.xib */; };
+		C9CE91CE12DE4B9A007FD043 /* iAuthenticator.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */; };
+		C9CE91E312DE5109007FD043 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CE91E112DE5109007FD043 /* clock.png */; };
+		C9CE91E412DE5109007FD043 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CE91E212DE5109007FD043 /* gear.png */; };
+		C9CE91E612DE514F007FD043 /* TokenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CE91E512DE514F007FD043 /* TokenController.xib */; };
+		C9CE91EC12DE52AD007FD043 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CE91EB12DE52AD007FD043 /* CoreFoundation.framework */; };
+		C9CE925B12DE52CF007FD043 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CE925A12DE52CF007FD043 /* CoreData.framework */; };
+		C9CE933412DE5453007FD043 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CE933112DE5453007FD043 /* Region.m */; };
+		C9CE933512DE5453007FD043 /* Authenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CE933312DE5453007FD043 /* Authenticator.m */; };
+		C9CE934D12DE575C007FD043 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CE934B12DE575C007FD043 /* SettingsController.m */; };
+		C9CE934E12DE575C007FD043 /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CE934C12DE575C007FD043 /* SettingsController.xib */; };
+		C9CE935212DE5773007FD043 /* TokenController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CE935012DE5773007FD043 /* TokenController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* iAuthenticatorAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iAuthenticatorAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iAuthenticatorAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iAuthenticatorAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iAuthenticator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAuthenticator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* iAuthenticator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iAuthenticator_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* iAuthenticator-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iAuthenticator-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C90CE1A412DE6C6D006DA8C5 /* AuthenticatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatorController.h; sourceTree = "<group>"; };
+		C90CE1A512DE6C6D006DA8C5 /* AuthenticatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatorController.m; sourceTree = "<group>"; };
+		C90CE1A612DE6C6D006DA8C5 /* AuthenticatorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticatorController.xib; sourceTree = "<group>"; };
+		C90CE32C12DE7A6A006DA8C5 /* SettingsNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNavController.h; sourceTree = "<group>"; };
+		C90CE32D12DE7A6A006DA8C5 /* SettingsNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNavController.m; sourceTree = "<group>"; };
+		C933D89F12DF9C5F00A797ED /* TokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenView.h; sourceTree = "<group>"; };
+		C933D8A012DF9C5F00A797ED /* TokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenView.m; sourceTree = "<group>"; };
+		C933D8A212DF9C6F00A797ED /* TokenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenView.xib; sourceTree = "<group>"; };
+		C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = iAuthenticator.xcdatamodel; sourceTree = "<group>"; };
+		C9CE91E112DE5109007FD043 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		C9CE91E212DE5109007FD043 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		C9CE91E512DE514F007FD043 /* TokenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TokenController.xib; path = ../TokenController.xib; sourceTree = "<group>"; };
+		C9CE91EB12DE52AD007FD043 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		C9CE925A12DE52CF007FD043 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C9CE933012DE5453007FD043 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Region.h; path = ../Region.h; sourceTree = "<group>"; };
+		C9CE933112DE5453007FD043 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Region.m; path = ../Region.m; sourceTree = "<group>"; };
+		C9CE933212DE5453007FD043 /* Authenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Authenticator.h; path = ../Authenticator.h; sourceTree = "<group>"; };
+		C9CE933312DE5453007FD043 /* Authenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Authenticator.m; path = ../Authenticator.m; sourceTree = "<group>"; };
+		C9CE934A12DE575C007FD043 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		C9CE934B12DE575C007FD043 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		C9CE934C12DE575C007FD043 /* SettingsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
+		C9CE934F12DE5773007FD043 /* TokenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenController.h; sourceTree = "<group>"; };
+		C9CE935012DE5773007FD043 /* TokenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				C9CE91EC12DE52AD007FD043 /* CoreFoundation.framework in Frameworks */,
+				C9CE925B12DE52CF007FD043 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C933D89C12DF9C2300A797ED /* Views */,
+				C9CE934912DE5729007FD043 /* Controllers */,
+				C9CE91D412DE4DD0007FD043 /* Models */,
+				1D3623240D0F684500981E51 /* iAuthenticatorAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iAuthenticatorAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iAuthenticator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* iAuthenticator */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = iAuthenticator;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* iAuthenticator_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE934812DE5716007FD043 /* Images */,
+				8D1107310486CEB800E47090 /* iAuthenticator-Info.plist */,
+				C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE925A12DE52CF007FD043 /* CoreData.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				C9CE91EB12DE52AD007FD043 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C933D89C12DF9C2300A797ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C933D89E12DF9C3900A797ED /* Nibs */,
+				C933D89F12DF9C5F00A797ED /* TokenView.h */,
+				C933D8A012DF9C5F00A797ED /* TokenView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C933D89E12DF9C3900A797ED /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				C90CE1A612DE6C6D006DA8C5 /* AuthenticatorController.xib */,
+				C9CE934C12DE575C007FD043 /* SettingsController.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				C9CE91E512DE514F007FD043 /* TokenController.xib */,
+				C933D8A212DF9C6F00A797ED /* TokenView.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		C9CE91D412DE4DD0007FD043 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE933012DE5453007FD043 /* Region.h */,
+				C9CE933112DE5453007FD043 /* Region.m */,
+				C9CE933212DE5453007FD043 /* Authenticator.h */,
+				C9CE933312DE5453007FD043 /* Authenticator.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C9CE934812DE5716007FD043 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE91E112DE5109007FD043 /* clock.png */,
+				C9CE91E212DE5109007FD043 /* gear.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C9CE934912DE5729007FD043 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9CE934A12DE575C007FD043 /* SettingsController.h */,
+				C9CE934B12DE575C007FD043 /* SettingsController.m */,
+				C9CE934F12DE5773007FD043 /* TokenController.h */,
+				C9CE935012DE5773007FD043 /* TokenController.m */,
+				C90CE1A412DE6C6D006DA8C5 /* AuthenticatorController.h */,
+				C90CE1A512DE6C6D006DA8C5 /* AuthenticatorController.m */,
+				C90CE32C12DE7A6A006DA8C5 /* SettingsNavController.h */,
+				C90CE32D12DE7A6A006DA8C5 /* SettingsNavController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iAuthenticator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iAuthenticator" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iAuthenticator;
+			productName = iAuthenticator;
+			productReference = 1D6058910D05DD3D006BFB54 /* iAuthenticator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iAuthenticator" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* iAuthenticator */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iAuthenticator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				C9CE91E312DE5109007FD043 /* clock.png in Resources */,
+				C9CE91E412DE5109007FD043 /* gear.png in Resources */,
+				C9CE91E612DE514F007FD043 /* TokenController.xib in Resources */,
+				C9CE934E12DE575C007FD043 /* SettingsController.xib in Resources */,
+				C90CE1A812DE6C6D006DA8C5 /* AuthenticatorController.xib in Resources */,
+				C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* iAuthenticatorAppDelegate.m in Sources */,
+				C9CE91CE12DE4B9A007FD043 /* iAuthenticator.xcdatamodel in Sources */,
+				C9CE933412DE5453007FD043 /* Region.m in Sources */,
+				C9CE933512DE5453007FD043 /* Authenticator.m in Sources */,
+				C9CE934D12DE575C007FD043 /* SettingsController.m in Sources */,
+				C9CE935212DE5773007FD043 /* TokenController.m in Sources */,
+				C90CE1A712DE6C6D006DA8C5 /* AuthenticatorController.m in Sources */,
+				C90CE32F12DE7A6A006DA8C5 /* SettingsNavController.m in Sources */,
+				C933D8A112DF9C5F00A797ED /* TokenView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iAuthenticator_Prefix.pch;
+				INFOPLIST_FILE = "iAuthenticator-Info.plist";
+				PRODUCT_NAME = iAuthenticator;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iAuthenticator_Prefix.pch;
+				INFOPLIST_FILE = "iAuthenticator-Info.plist";
+				PRODUCT_NAME = iAuthenticator;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iAuthenticator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iAuthenticator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
