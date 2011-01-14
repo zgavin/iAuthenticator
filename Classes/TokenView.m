@@ -38,6 +38,8 @@
 	code4.text = @"";
 	code5.text = @"";
 	
+	
+	
 	return self;
 }
 
@@ -54,40 +56,79 @@
 	self.authenticator = inAuthenticator;
 	self.name.text = authenticator.name;
 	
-	codes = [NSMutableArray arrayWithObjects:code1,code2,code3,code4,code5,nil];
+	codes = [[NSMutableArray arrayWithObjects:code1,code2,code3,code4,code5,nil] retain];
 	
+	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970];
+	int token_time = seconds - fmod(seconds,30)-120;
+	double a = 0;
+	for (UILabel* label in codes) {
+		label.text = [authenticator tokenAtTimeinterval:token_time];
+		label.alpha = a;
+		a += .25;
+		token_time += 30;
+	}
+	code1.alpha = 1;
 	return self;
 }
 
 - (void) didMoveToSuperview {
 	if(authenticator) {
 		[self updateProgress];
-		[self updateTokens];
 	}
 	[self resignFirstResponder];
 }
 
 
-- (void) startTimers {
-	if (progressTimer == nil) {
-		progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+- (void) startTimer {
+	if (timer == nil) {
+		timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 	}
-	if (tokenTimer == nil) {
-		tokenTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
-	}
-	[self updateTokens];
 	[self updateProgress];
 }
 
-- (void) stopTimers {
-	[progressTimer invalidate];
-	progressTimer = nil;
-	[tokenTimer invalidate];
-	tokenTimer = nil;
+- (void) stopTimer {
+	[timer invalidate];
+	timer = nil;
 }
 
-- (void) updateTokens {
-	
+- (void) updateTokens:(BOOL) animated {
+	if (codes.count == 0) { return; }
+	UILabel* current_label = [codes objectAtIndex:0];
+	current_label.text = [authenticator token];
+
+	[codes removeObjectAtIndex:0];
+	[codes insertObject:current_label atIndex:codes.count];
+
+	if (animated) {
+		[UIView beginAnimations:@"moveLabels" context:nil];
+		[UIView setAnimationDuration:3];
+		[UIView setAnimationBeginsFromCurrentState:YES];
+		[UIView setAnimationDelegate:self];
+		[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+	}
+	for(UILabel* label in codes) {
+		CGRect f = label.frame;
+		f.origin.y -= 60;
+		label.frame = f;
+		label.alpha = (current_label == label) ? 1.0:label.alpha- 0.25;
+	}
+	if(animated) { 
+		[UIView commitAnimations]; 
+	} else {
+		[self resetTopLabel];
+	}
+}
+
+- (void) resetTopLabel {
+	UILabel* moved = [codes objectAtIndex:0];
+	CGRect f = moved.frame;
+	f.origin.y = 240;
+	moved.frame = f;
+	moved.alpha = 1.0;
+}
+
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+	[self resetTopLabel];
 }
 
 - (void) updateProgress {
@@ -136,10 +177,9 @@
 }
 
 - (void)dealloc {
-	[progressTimer invalidate];
-	progressTimer = nil;
-	[tokenTimer invalidate];
-	tokenTimer = nil;
+	[codes release];
+	[timer invalidate];
+	timer = nil;
 	[self.contentView release];
 	[self.name release];
     [super dealloc];

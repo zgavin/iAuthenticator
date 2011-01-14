@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Region * region;
 
+- (NSString*) token;
+- (NSString*) tokenAtTimeinterval: (NSTimeInterval) time;
+
 @end
 
 

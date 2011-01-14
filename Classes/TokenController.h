@@ -17,6 +17,8 @@
 	NSMutableArray* tokenViews;
     BOOL pageControlIsChangingPage;
 	BOOL needsReload;
+	
+	NSTimer* timer;
 }
 
 @property (nonatomic, retain) UIView *scrollView;
@@ -39,5 +41,7 @@
 - (IBAction) dateClicked:(id) sender;
 - (void) saveAction;
 - (TokenView*) tokenView ;
+- (void) updateTokens;
+- (void) updateTimer;
 
 @end

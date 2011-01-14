@@ -12,9 +12,8 @@
 
 @interface TokenView : UIView{
 	Authenticator *authenticator;
-	NSTimer *progressTimer;
-	NSTimer *tokenTimer;
-	NSArray *codes;
+	NSTimer *timer;
+	NSMutableArray *codes;
 	IBOutlet UILabel *name;
 	IBOutlet UILabel *code1;
 	IBOutlet UILabel *code2;
@@ -38,9 +37,11 @@
 
 -(id) initWithoutAuthenticator;
 -(id) initWithAuthenticator:(Authenticator*) inAuthenticator;
--(void) updateTokens;
+-(void) updateTokens:(BOOL) animated;
 -(void) updateProgress;
--(void) startTimers;
--(void) stopTimers;
+-(void) startTimer;
+-(void) stopTimer;
+-(void) resetTopLabel;
+-(void) animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context ;
 
 @end

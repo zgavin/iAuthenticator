@@ -10,6 +10,9 @@
 #import "iAuthenticatorAppDelegate.h"
 #import "Authenticator.h"
 #import "TokenView.h"
+#import <tgmath.h>
+
+
 
 @implementation TokenController
 @synthesize scrollView;
@@ -25,11 +28,33 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authenticatorsChanged:) name:@"AuthenticatorsChanged" object:nil];
 	
     [super viewDidLoad];
+	
+
+	
+	[self updateTimer];
 }
+	
+	
 
 - (void)authenticatorsChanged:(NSNotification *)notification {
 	
 	needsReload = YES;
+}
+	
+	
+- (void) updateTokens {
+	for (TokenView* view in tokenViews) { 
+		BOOL animated = (view == [self tokenView]);
+		[view updateTokens:animated];
+	}
+	[self updateTimer];
+}
+	
+- (void) updateTimer {
+	if (timer != nil) { [timer invalidate]; } 
+	NSDate* now = [NSDate date];
+	NSTimeInterval seconds = [now timeIntervalSince1970];
+	timer = [NSTimer scheduledTimerWithTimeInterval:(30.0-fmod(seconds,30.0)) target:self selector:@selector(updateTokens) userInfo:nil repeats:NO];
 }
 
 
@@ -118,7 +143,6 @@
 	NSInteger authenticators = 0;
 	CGFloat cx = 0;
 	
-	NSLog(@"fetch results: %d",fetchResults.count);
 	if(fetchResults.count == 0) {
 		TokenView *tokenView = [[TokenView alloc] initWithoutAuthenticator];
 		CGRect rect = tokenView.frame;
@@ -153,10 +177,9 @@
 		}
 		
 	}
-	NSLog(@"scrollView: %@",scrollView);
 
 	self.pageControl.numberOfPages = authenticators;
-	[[self tokenView] startTimers];
+	[[self tokenView] startTimer];
 	[scrollView setContentSize:CGSizeMake(cx, [scrollView bounds].size.height)];
 }
 
@@ -171,12 +194,12 @@
 	if (needsReload)
 		[self reloadData];
 	else
-		[[self tokenView] startTimers];
+		[[self tokenView] startTimer];
 	
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
-	[[self tokenView] stopTimers];
+	[[self tokenView] stopTimer];
 }
 
 #pragma mark -
@@ -193,7 +216,7 @@
     CGFloat pageWidth = _scrollView.frame.size.width;
     int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 	if (page != pageControl.currentPage) {
-		[[self tokenView] stopTimers];
+		[[self tokenView] stopTimer];
 	}
     pageControl.currentPage = page;
     
@@ -204,7 +227,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView 
 {
-	[[self tokenView] startTimers];
+	[[self tokenView] startTimer];
     pageControlIsChangingPage = NO;
 }
 
@@ -241,6 +264,8 @@
 	[tokenViews release];
 	[scrollView release];
 	[pageControl release];
+	[timer invalidate];
+	timer = nil;
 }
 
 
