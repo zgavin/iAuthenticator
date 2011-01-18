@@ -7,6 +7,7 @@
 //
 
 #import <CoreData/CoreData.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 @class Region;
 

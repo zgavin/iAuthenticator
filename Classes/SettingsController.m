@@ -131,6 +131,36 @@
 }
 */
 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+		Authenticator *authenticator = [authenticators objectAtIndex:indexPath.row];
+		NSManagedObjectContext *context = [authenticator managedObjectContext];
+		[context deleteObject:authenticator];
+		
+		NSError *error = nil;
+		[context save:&error];
+		if (error != nil) {
+			NSLog(@"There was an error!");
+			// handle error
+		}
+		
+		[self loadData];
+		
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	return UITableViewCellAccessoryDisclosureIndicator;
+}
+
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];

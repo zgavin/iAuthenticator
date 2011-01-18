@@ -16,6 +16,7 @@
 		C90CE1A712DE6C6D006DA8C5 /* AuthenticatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90CE1A512DE6C6D006DA8C5 /* AuthenticatorController.m */; };
 		C90CE1A812DE6C6D006DA8C5 /* AuthenticatorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90CE1A612DE6C6D006DA8C5 /* AuthenticatorController.xib */; };
 		C90CE32F12DE7A6A006DA8C5 /* SettingsNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90CE32D12DE7A6A006DA8C5 /* SettingsNavController.m */; };
+		C9170FF812E64CAA00582D20 /* NSString+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C9170FF712E64CAA00582D20 /* NSString+Hex.m */; };
 		C933D8A112DF9C5F00A797ED /* TokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C933D8A012DF9C5F00A797ED /* TokenView.m */; };
 		C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933D8A212DF9C6F00A797ED /* TokenView.xib */; };
 		C9CE91CE12DE4B9A007FD043 /* iAuthenticator.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */; };
@@ -47,6 +48,8 @@
 		C90CE1A612DE6C6D006DA8C5 /* AuthenticatorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticatorController.xib; sourceTree = "<group>"; };
 		C90CE32C12DE7A6A006DA8C5 /* SettingsNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsNavController.h; sourceTree = "<group>"; };
 		C90CE32D12DE7A6A006DA8C5 /* SettingsNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsNavController.m; sourceTree = "<group>"; };
+		C9170FF612E64CAA00582D20 /* NSString+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hex.h"; sourceTree = "<group>"; };
+		C9170FF712E64CAA00582D20 /* NSString+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hex.m"; sourceTree = "<group>"; };
 		C933D89F12DF9C5F00A797ED /* TokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenView.h; sourceTree = "<group>"; };
 		C933D8A012DF9C5F00A797ED /* TokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenView.m; sourceTree = "<group>"; };
 		C933D8A212DF9C6F00A797ED /* TokenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenView.xib; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				C9CE91D412DE4DD0007FD043 /* Models */,
 				1D3623240D0F684500981E51 /* iAuthenticatorAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iAuthenticatorAppDelegate.m */,
+				C9170FF612E64CAA00582D20 /* NSString+Hex.h */,
+				C9170FF712E64CAA00582D20 /* NSString+Hex.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				C90CE1A712DE6C6D006DA8C5 /* AuthenticatorController.m in Sources */,
 				C90CE32F12DE7A6A006DA8C5 /* SettingsNavController.m in Sources */,
 				C933D8A112DF9C5F00A797ED /* TokenView.m in Sources */,
+				C9170FF812E64CAA00582D20 /* NSString+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
