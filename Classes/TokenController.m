@@ -46,6 +46,7 @@
 	for (TokenView* view in tokenViews) { 
 		BOOL animated = (view == [self tokenView]);
 		[view updateTokens:animated];
+		[view.authenticator enroll];
 	}
 	[self updateTimer];
 }

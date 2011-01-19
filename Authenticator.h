@@ -9,10 +9,14 @@
 #import <CoreData/CoreData.h>
 #import <CommonCrypto/CommonHMAC.h>
 
+
+
 @class Region;
 
 @interface Authenticator :  NSManagedObject  
 {
+	NSString * const ENROLL_MODULUS;
+	uint8_t enroll_key[37];
 }
 
 @property (nonatomic, retain) NSString * key;
@@ -22,6 +26,7 @@
 
 - (NSString*) token;
 - (NSString*) tokenAtTimeinterval: (NSTimeInterval) time;
+- (void) enroll;
 
 @end
 

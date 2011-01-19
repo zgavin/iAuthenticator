@@ -12,5 +12,6 @@
 @implementation Region 
 
 @dynamic name;
+@dynamic code;
 
 @end

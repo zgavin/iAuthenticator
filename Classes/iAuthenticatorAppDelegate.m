@@ -45,21 +45,11 @@
 	{
 		Region *north_america = (Region*) [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:context];
 		north_america.name = @"North America";
+		north_america.code = @"US";
 		
 		Region *europe = (Region*) [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:context];
 		europe.name = @"Europe";
-		
-		Authenticator *na_auth = (Authenticator*) [NSEntityDescription insertNewObjectForEntityForName:@"Authenticator" inManagedObjectContext:context];
-		na_auth.name = @"North America Test";
-		na_auth.serial = @"US-1000-1000-1000-1000";
-		na_auth.key = @"WTFBBQ";
-		na_auth.region = north_america;
-		
-		Authenticator *euro_auth = (Authenticator*) [NSEntityDescription insertNewObjectForEntityForName:@"Authenticator" inManagedObjectContext:context];
-		euro_auth.name = @"Europe Test";
-		euro_auth.serial = @"US-1000-1000-1000-1000";
-		euro_auth.key = @"WTFBBQ";
-		euro_auth.region = europe;
+		europe.code = @"EU";
 		
 		NSError *error = nil;
 		[context save:&error];

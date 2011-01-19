@@ -24,6 +24,21 @@
 	authenticator.name = @"";
 	authenticator.serial = @"";
 	authenticator.key = @"";
+	iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:context];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+	
+	// run the query
+	NSError *error;
+	NSArray *fetchResults = [context executeFetchRequest:request error:&error];
+	if (fetchResults == nil) {
+		NSLog(@"There was an error!");
+		// handle error
+	}
+	Region *region = [fetchResults objectAtIndex:0];
+	authenticator.region = region;
 	
 	// set up the controller from the authenticator
 	controller.title = [authenticator valueForKey:@"name"];
