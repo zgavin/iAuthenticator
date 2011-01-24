@@ -7,6 +7,7 @@
 //
 
 #import "TokenView.h"
+#import "Region.h"
 
 
 @implementation TokenView
@@ -32,11 +33,12 @@
     }
 	
 	name.text = @"No Authenticators";
-	code1.text = @"Add some authenticators";
+	code1.text = @"";
 	code2.text = @"";
 	code3.text = @"";
 	code4.text = @"";
-	code5.text = @"";
+	code5.text = @"Add some authenticators";
+	code5.font = [UIFont systemFontOfSize:14.0];
 	
 	
 	
@@ -61,13 +63,18 @@
 	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970];
 	int token_time = seconds - fmod(seconds,30)-120;
 	double a = 0;
+	double y = -60;
 	for (UILabel* label in codes) {
+		CGRect f = label.frame;
+		f.origin.y = y;
+		y += 60;
+		label.frame = f;
 		label.text = [authenticator tokenAtTimeinterval:token_time];
 		label.alpha = a;
 		a += .25;
 		token_time += 30;
 	}
-	code1.alpha = 1;
+	[self resetTopLabel];
 	return self;
 }
 
@@ -101,7 +108,7 @@
 
 	if (animated) {
 		[UIView beginAnimations:@"moveLabels" context:nil];
-		[UIView setAnimationDuration:3];
+		[UIView setAnimationDuration:1.5];
 		[UIView setAnimationBeginsFromCurrentState:YES];
 		[UIView setAnimationDelegate:self];
 		[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
@@ -134,7 +141,7 @@
 - (void) updateProgress {
 	if ([authenticator isFault]) { return;}
 	NSDate *date = [NSDate date];
-	NSTimeInterval seconds =  [date timeIntervalSince1970];
+	NSTimeInterval seconds =  [date timeIntervalSince1970]+[authenticator.region.offset doubleValue];
 	
 	[progressView setProgress: (((int) seconds % 30) +(seconds - (int) seconds))/30.0];
 }

@@ -19,6 +19,7 @@
 		C9170FF812E64CAA00582D20 /* NSString+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C9170FF712E64CAA00582D20 /* NSString+Hex.m */; };
 		C933D8A112DF9C5F00A797ED /* TokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C933D8A012DF9C5F00A797ED /* TokenView.m */; };
 		C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C933D8A212DF9C6F00A797ED /* TokenView.xib */; };
+		C93D358012EE2D0300EDC616 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C93D357F12EE2D0300EDC616 /* background.png */; };
 		C9634C7012E799A10039559E /* bn_error.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634BF912E799A00039559E /* bn_error.c */; };
 		C9634C7112E799A10039559E /* bn_fast_mp_invmod.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634BFA12E799A00039559E /* bn_fast_mp_invmod.c */; };
 		C9634C7212E799A10039559E /* bn_fast_mp_montgomery_reduce.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634BFB12E799A00039559E /* bn_fast_mp_montgomery_reduce.c */; };
@@ -173,6 +174,7 @@
 		C933D89F12DF9C5F00A797ED /* TokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenView.h; sourceTree = "<group>"; };
 		C933D8A012DF9C5F00A797ED /* TokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenView.m; sourceTree = "<group>"; };
 		C933D8A212DF9C6F00A797ED /* TokenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TokenView.xib; sourceTree = "<group>"; };
+		C93D357F12EE2D0300EDC616 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		C9634BF612E799A00039559E /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
 		C9634BF712E799A00039559E /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
 		C9634BF812E799A00039559E /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 		C9CE934812DE5716007FD043 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C93D357F12EE2D0300EDC616 /* background.png */,
 				C9CE91E112DE5109007FD043 /* clock.png */,
 				C9CE91E212DE5109007FD043 /* gear.png */,
 			);
@@ -641,6 +644,7 @@
 				C9CE934E12DE575C007FD043 /* SettingsController.xib in Resources */,
 				C90CE1A812DE6C6D006DA8C5 /* AuthenticatorController.xib in Resources */,
 				C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */,
+				C93D358012EE2D0300EDC616 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

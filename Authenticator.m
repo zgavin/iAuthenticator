@@ -11,6 +11,7 @@
 #import "Region.h"
 #import <stdlib.h>
 #import "tommath.h"
+#import "NSString+Hex.h"
 
 @implementation Authenticator 
 
@@ -29,7 +30,7 @@ const unsigned char public_exponent[] = {0x01,0x01};
 - (NSString*) tokenAtTimeinterval: (NSTimeInterval) timeInterval {
 	uint8_t mac[20];
 	uint8_t to_sign[8];
-	long interval = (int) timeInterval / 30;
+	long interval = ((int) (timeInterval + [[self.region offset] doubleValue])) / 30;
 	
 	/* Encode counter */
     for (int i = sizeof(to_sign) - 1; i >= 0; i--) {
@@ -87,13 +88,10 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	[request setHTTPMethod:@"POST"];
 	[request addValue:@"128" forHTTPHeaderField:@"Content-length"];
 	[request addValue:@"application/octet-stream" forHTTPHeaderField:@"Content-type"];
-	 NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
-	 if (connection && !receivedData) {
-		 receivedData = [[NSMutableData data] retain];
-	 } 
-			
-	
-
+	NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	if (connection && !receivedData) {
+	 receivedData = [[NSMutableData data] retain];
+	} 
 	
 }
 
@@ -135,6 +133,13 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	
 	NSLog(@"Serial: %@",new_serial);
 	NSLog(@"Key: %@", new_key);
+	
+	self.serial = new_serial;
+	self.key = new_key;
+	if(![self name] || [self name].length == 0) {
+		[self setName:new_serial];
+	}
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"AuthenticatorEnrolled" object:self];
 	[connection release];
 }
 	 

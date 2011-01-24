@@ -24,7 +24,7 @@
 	authenticator.name = @"";
 	authenticator.serial = @"";
 	authenticator.key = @"";
-	iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	iAuthenticatorAppDelegate *appDelegate = (iAuthenticatorAppDelegate*)  [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:context];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];

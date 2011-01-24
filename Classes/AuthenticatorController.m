@@ -11,6 +11,7 @@
 #import "Authenticator.h"
 #import "FieldDescription.h"
 
+
 @implementation AuthenticatorController
 
 @synthesize authenticator;
@@ -18,12 +19,12 @@
 @synthesize tempValues, textFieldBeingEdited, detailMode, footerView;
 
 -(NSManagedObjectContext*) managedObjectContext {
-	iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	iAuthenticatorAppDelegate *appDelegate = (iAuthenticatorAppDelegate*) [[UIApplication sharedApplication] delegate];
 	return [appDelegate managedObjectContext];
 }
 
 -(NSManagedObjectModel*) managedObjectModel {
-    iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    iAuthenticatorAppDelegate *appDelegate =  (iAuthenticatorAppDelegate*) [[UIApplication sharedApplication] delegate];
     return [appDelegate managedObjectModel];
 }
 
@@ -74,14 +75,6 @@
 
 
 -(IBAction)textFieldDone:(id)sender {
-    UITableViewCell *cell = (UITableViewCell *)[[sender superview] superview];
-    UITableView *table = (UITableView *)[cell superview];
-    NSIndexPath *textFieldIndexPath = [table indexPathForCell:cell];
-    NSUInteger row = [textFieldIndexPath row];
-    row++;
-    if (row >= kNumberOfEditableRows)
-        row = 0;
-
 	[sender resignFirstResponder];
 }
 
@@ -135,17 +128,14 @@
 		[region_names insertObject:[region name] atIndex:region_names.count];
 	}
 	
-    NSArray *array = [[NSArray alloc] initWithObjects:
-						[[FieldDescription alloc] initWithField:@"name" label:@"Name" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(6, 12, 280, 25)],
-						[[FieldDescription alloc] initWithField:@"serial" label:@"Serial" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(6, 12, 280, 25)],
-					    [[FieldDescription alloc] initWithField:@"key" label:@"Key" klass:[UITextField class] data:[NSNumber numberWithInt:13] frame:CGRectMake(6, 12, 280, 25)],
-					    [[FieldDescription alloc] initWithField:@"region" label:@"Region" klass:[UISegmentedControl class] data:region_names frame:CGRectMake(0, 0, 300, 45)],
-						nil
-					 ];
+    fields = [[NSArray alloc] initWithObjects:
+				[[FieldDescription alloc] initWithField:@"name" label:@"Name" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(10, 12, 280, 25)],
+				[[FieldDescription alloc] initWithField:@"serial" label:@"Serial" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(10, 12, 280, 25)],
+				[[FieldDescription alloc] initWithField:@"key" label:@"Key" klass:[UITextField class] data:[NSNumber numberWithInt:13] frame:CGRectMake(10, 13, 280, 25)],
+				[[FieldDescription alloc] initWithField:@"region" label:@"Region" klass:[UISegmentedControl class] data:region_names frame:CGRectMake(0, 0, 300, 45)],
+				nil
+			 ];
     
-	
-	fields = array;
-    //[array release];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                      initWithTitle:@"Cancel"
@@ -229,28 +219,40 @@
 	
 	NSString *title;
 	SEL selector;
-	if([authenticator isInserted]) {
-		title = @"Request from Blizzard"
-		selector = @selector(enroll:)
+	if(!authenticator.key || authenticator.key.length == 0 || !authenticator.serial || authenticator.serial.length == 0 ) {
+		title = @"Request from Blizzard";
+		selector = @selector(enroll:);
 	} else {
-		title = @"Synch with Server"
-		select = @selector(sync:)
+		title = @"Sync with Blizzard";
+		selector = @selector(sync:);
 	}
-	[button setTitle:@"Synch with Server" forState:UIControlStateNormal];
+	[button setTitle:title forState:UIControlStateNormal];
 	[button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
 	[view addSubview:button];
-						
+				
 	return view;
 }
 
 - (IBAction) enroll:(id) sender {
-	NSLog(@"enroll");
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authenticatorEnrolled:) name:@"AuthenticatorEnrolled" object:authenticator];
+	NSLog(@"%@", tempValues);
+	[self setValueForUISegmentedControl:[fields objectAtIndex:fields.count-1]];
 	[authenticator enroll];
 	
+	UIButton * button = (UIButton*) sender;
+	
+	[button setTitle:@"Sync with Blizzard" forState:UIControlStateNormal];
+	[button removeTarget:self action:@selector(enroll:) forControlEvents:UIControlEventTouchUpInside];
+	[button addTarget:self action:@selector(sync:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)authenticatorEnrolled:(NSNotification *)notification {
+	[[NSNotificationCenter defaultCenter] removeObserver: self name:@"AuthenticatorEnrolled" object:authenticator];
+	[self.tableView reloadData];
 }
 
 - (IBAction) sync:(id) sender {
-	NSLog(@"sync");
+	[authenticator.region sync];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -305,6 +307,8 @@
 	 
 - (void) setValueForUISegmentedControl:(FieldDescription*) field {
 	NSString * region_name = [tempValues objectForKey:field];
+	NSLog(@"%@",tempValues);
+	NSLog(@"%@",field);
 	for (Region* region in regions) {
 		if ([[region name] isEqualToString:region_name]) {
 			authenticator.region = region;

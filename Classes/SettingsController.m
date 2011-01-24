@@ -28,7 +28,7 @@
 */
 
 - (void) loadData {	
-	iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	iAuthenticatorAppDelegate *appDelegate = (iAuthenticatorAppDelegate*) [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Authenticator" inManagedObjectContext:context];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -86,11 +86,12 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     // Set up the cell...
 	Authenticator *auth = [authenticators objectAtIndex:indexPath.row];
 	cell.textLabel.text = [auth valueForKey:@"name"];
@@ -150,15 +151,11 @@
 		[self loadData];
 		
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"AuthenticatorsChanged" object:self];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
-}
-
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-	return UITableViewCellAccessoryDisclosureIndicator;
 }
 
 - (void)didReceiveMemoryWarning {

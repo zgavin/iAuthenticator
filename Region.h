@@ -9,12 +9,16 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Region :  NSManagedObject  
-{
+@interface Region :  NSManagedObject  {
+	NSMutableData * receivedData;
+	NSTimeInterval systemTime;
 }
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * code;
+@property (nonatomic, retain) NSNumber * offset;
+
+- (void) sync ;
 
 @end
 

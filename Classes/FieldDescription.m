@@ -27,7 +27,7 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone{
-	return [[FieldDescription alloc] initWithField:[[field copyWithZone:zone] retain] label:[[label copyWithZone:zone] retain] klass:klass data:[[data copy] retain] frame:frame];
+	return [self retain];//[[FieldDescription alloc] initWithField:[[field copyWithZone:zone] retain] label:[[label copyWithZone:zone] retain] klass:klass data:[[data copy] retain] frame:frame];
 }
 
 - (NSString*) setterField {

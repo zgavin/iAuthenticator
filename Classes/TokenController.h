@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Region.h"
 
 @class TokenView;
 
@@ -15,10 +16,10 @@
 	IBOutlet UIPageControl* pageControl;
 	
 	NSMutableArray* tokenViews;
+	NSArray* regions;
+	NSMutableDictionary* timers;
     BOOL pageControlIsChangingPage;
 	BOOL needsReload;
-	
-	NSTimer* timer;
 }
 
 @property (nonatomic, retain) UIView *scrollView;
@@ -37,11 +38,8 @@
 
 - (NSManagedObjectContext*) managedObjectContext;
 
-- (IBAction) btnClicked:(id) sender;
-- (IBAction) dateClicked:(id) sender;
-- (void) saveAction;
-- (TokenView*) tokenView ;
-- (void) updateTokens;
-- (void) updateTimer;
+- (TokenView*) tokenView;
+- (void) updateTokens:(NSTimer*) timer;
+- (void) updateTimer:(Region*) region;
 
 @end

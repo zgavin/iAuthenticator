@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define kNumberOfEditableRows        3
-#define kNameRowIndex                0
-#define kSerialRowIndex				 1
-#define kKeyRowIndex			     2
-
+#import "Region.h"
 #define kLabelTag                    4096
 #define kSwitchTag					 4097
 
@@ -32,6 +28,7 @@
     UIView *footerView;
 	NSArray * fields;
 	NSArray * regions;
+	
 }
 
 

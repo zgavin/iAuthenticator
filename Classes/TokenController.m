@@ -28,49 +28,53 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authenticatorsChanged:) name:@"AuthenticatorsChanged" object:nil];
 	
     [super viewDidLoad];
-	
 
+	timers = [[NSMutableDictionary dictionary] retain];
 	
-	[self updateTimer];
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:self.managedObjectContext];
+	[request setEntity:entityDescription];
+    
+	NSError *error;
+	regions = [self.managedObjectContext executeFetchRequest:request error:&error];
+	for(Region* region in regions) {
+		[self updateTimer:region];
+	}
+	
+	
 }
 	
 	
 
 - (void)authenticatorsChanged:(NSNotification *)notification {
-	
 	needsReload = YES;
 }
 	
 	
-- (void) updateTokens {
+- (void) updateTokens:(NSTimer*) timer {
+	Region * region = (Region*) [timer userInfo];
 	for (TokenView* view in tokenViews) { 
-		BOOL animated = (view == [self tokenView]);
-		[view updateTokens:animated];
-		//[view.authenticator enroll];
+		if ([view.authenticator.region isEqual:region]) {
+			BOOL animated = (view == [self tokenView]);
+			[view updateTokens:animated];
+		}
+		
 	}
-	[self updateTimer];
+	[self updateTimer:region];
 }
 	
-- (void) updateTimer {
-	if (timer != nil) { [timer invalidate]; } 
+- (void) updateTimer:(Region*) region {
 	NSDate* now = [NSDate date];
-	NSTimeInterval seconds = [now timeIntervalSince1970];
-	timer = [NSTimer scheduledTimerWithTimeInterval:(30.0-fmod(seconds,30.0)) target:self selector:@selector(updateTokens) userInfo:nil repeats:NO];
+	NSTimeInterval seconds = [now timeIntervalSince1970]+[region.offset doubleValue];
+	NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:(30.0-fmod(seconds,30.0)) target:self selector:@selector(updateTokens:) userInfo:region repeats:NO]; 
+	[timers setObject:timer forKey:region.code];
 }
 
 
-- (void)saveAction {
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Unresolved Core Data Save error %@, %@", error, [error userInfo]);
-        exit(-1);
-    }
-}
 
 - (void)restoreSavedView {
     // Restore state
-    int viewIdentifier = [[NSUserDefaults standardUserDefaults]
-                          integerForKey:@"last_view"];
+    int viewIdentifier = [[NSUserDefaults standardUserDefaults] integerForKey:@"last_view"];
     
     if (viewIdentifier != 0)
     {
@@ -84,16 +88,8 @@
 }
 
 -(NSManagedObjectContext*) managedObjectContext {
-	iAuthenticatorAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	iAuthenticatorAppDelegate *appDelegate = (iAuthenticatorAppDelegate*)  [[UIApplication sharedApplication] delegate];
 	return [appDelegate managedObjectContext];
-}
-
-- (IBAction) btnClicked:(id) sender {
-
-}
-
-- (IBAction) dateClicked:(id) sender {
-
 }
 
 #pragma mark -
@@ -123,7 +119,10 @@
 		[view removeFromSuperview];
 	}
 	
-	
+	NSLog(@"%@",scrollView.backgroundColor);
+	scrollView.backgroundColor = [UIColor clearColor];
+	NSLog(@"%@",scrollView.backgroundColor);
+
 	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Authenticator" inManagedObjectContext:self.managedObjectContext];
 	[request setEntity:entityDescription];
@@ -140,6 +139,8 @@
 		NSLog(@"There was an error getting the list of Authenticators!");
 		// handle error
 	}	
+	
+	
 	
 	NSInteger authenticators = 0;
 	CGFloat cx = 0;
@@ -170,11 +171,9 @@
 			
 			tokenView.frame = rect;
 			
-			
 			[scrollView addSubview:tokenView];
 			[tokenViews addObject:tokenView];
 			cx += scrollView.frame.size.width;
-			
 		}
 		
 	}
@@ -262,11 +261,14 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	[regions	release];
 	[tokenViews release];
 	[scrollView release];
 	[pageControl release];
-	[timer invalidate];
-	timer = nil;
+	for(NSTimer * timer in [timers allValues]) {
+		[timer invalidate];
+	}
+	[timers release];
 }
 
 
