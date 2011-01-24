@@ -17,6 +17,7 @@
 {
 	NSString * const ENROLL_MODULUS;
 	uint8_t enroll_key[37];
+	NSMutableData * receivedData;
 }
 
 @property (nonatomic, retain) NSString * key;

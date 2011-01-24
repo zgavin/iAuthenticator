@@ -9,6 +9,7 @@
 #import "AuthenticatorController.h"
 #import "iAuthenticatorAppDelegate.h"
 #import "Authenticator.h"
+#import "FieldDescription.h"
 
 @implementation AuthenticatorController
 
@@ -43,28 +44,16 @@
 	
     if (textFieldBeingEdited != nil)
     {
-        NSNumber *tagAsNum= [[NSNumber alloc]  initWithInt:textFieldBeingEdited.tag];
-        [tempValues setObject:textFieldBeingEdited.text forKey: tagAsNum];
-        [tagAsNum release];
-        
+        [tempValues setObject:textFieldBeingEdited.text forKey: [fields objectAtIndex:textFieldBeingEdited.tag]];
     }
 	
 	
-	for (NSNumber *key in [tempValues allKeys])
+	for (FieldDescription *field in [tempValues allKeys])
     {
-        switch ([key intValue]) {
-            case kNameRowIndex:
-                authenticator.name = [tempValues objectForKey:key];
-                break;
-            case kSerialRowIndex:
-                authenticator.serial = [tempValues objectForKey:key];
-                break;
-            case kKeyRowIndex:
-				authenticator.key = [tempValues objectForKey:key];
-                break;
-            default:
-                break;
-        }
+		
+		SEL selector = NSSelectorFromString([NSString stringWithFormat:@"setValueFor%@:",NSStringFromClass(field.klass)]);
+
+		[self performSelector:selector withObject:field];
     }
 	
 	// save the object to CoreData
@@ -79,10 +68,6 @@
 	
 	[[self nextResponder] resignFirstResponder];
 	
-    //NSArray *allControllers = self.navigationController.viewControllers;
-    //SettingsTableViewController *parent = (SettingsTableViewController*) [allControllers lastObject];
-    //[parent loadDataFromDB];
-    //[parent.tableView reloadData];
 	
 	([self.detailMode intValue] == kDetailModeAdd) ? [self dismissModalViewControllerAnimated:YES] : [self.navigationController popViewControllerAnimated:YES];
 }
@@ -137,9 +122,30 @@
 #pragma mark -
 
 - (void)viewDidLoad {
-    NSArray *array = [[NSArray alloc] initWithObjects:@"Name", @"Serial", @"Key", nil];
-    self.fieldLabels = array;
-    [array release];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Region" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+	
+	NSError *error;
+	regions = [[self managedObjectContext] executeFetchRequest:request error:&error];
+	[regions retain];
+	NSMutableArray * region_names = [NSMutableArray arrayWithCapacity:0];
+	
+	for (Region* region in regions) {
+		[region_names insertObject:[region name] atIndex:region_names.count];
+	}
+	
+    NSArray *array = [[NSArray alloc] initWithObjects:
+						[[FieldDescription alloc] initWithField:@"name" label:@"Name" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(6, 12, 280, 25)],
+						[[FieldDescription alloc] initWithField:@"serial" label:@"Serial" klass:[UITextField class] data:[NSNumber numberWithInt:16] frame:CGRectMake(6, 12, 280, 25)],
+					    [[FieldDescription alloc] initWithField:@"key" label:@"Key" klass:[UITextField class] data:[NSNumber numberWithInt:13] frame:CGRectMake(6, 12, 280, 25)],
+					    [[FieldDescription alloc] initWithField:@"region" label:@"Region" klass:[UISegmentedControl class] data:region_names frame:CGRectMake(0, 0, 300, 45)],
+						nil
+					 ];
+    
+	
+	fields = array;
+    //[array release];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                      initWithTitle:@"Cancel"
@@ -187,99 +193,152 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return kNumberOfEditableRows;
+    return 1;
 }
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	UILabel *label = [[UILabel alloc] init];
+	label.textAlignment = UITextAlignmentLeft;
+	label.font = [UIFont boldSystemFontOfSize:18];
+	label.text = [NSString stringWithFormat:@"  %@",((FieldDescription*) [fields objectAtIndex:section]).label];
+	label.backgroundColor = [UIColor clearColor];
+	label.frame = CGRectMake(20, 0, 200, 24);
+	
+	return label;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 24.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+	if(section != [self numberOfSectionsInTableView:tableView]-1) {
+		return nil;
+	}
+	UIView* view = [[UIView alloc] initWithFrame:CGRectMake(60, 5, 200, 25)];
+	
+	UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	button.frame = CGRectMake(60, 20, 200, 25);
+	
+	NSString *title;
+	SEL selector;
+	if([authenticator isInserted]) {
+		title = @"Request from Blizzard"
+		selector = @selector(enroll:)
+	} else {
+		title = @"Synch with Server"
+		select = @selector(sync:)
+	}
+	[button setTitle:@"Synch with Server" forState:UIControlStateNormal];
+	[button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+	[view addSubview:button];
+						
+	return view;
+}
+
+- (IBAction) enroll:(id) sender {
+	NSLog(@"enroll");
+	[authenticator enroll];
+	
+}
+
+- (IBAction) sync:(id) sender {
+	NSLog(@"sync");
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return section == [self numberOfSectionsInTableView:tableView]-1 ? 45.0:0.0;
+}
+
+
+- (UITextField*) setupUITextField:(FieldDescription*) field {
+	UITextField* textField = [[UITextField alloc] initWithFrame:field.frame];
+	textField.clearsOnBeginEditing = NO;
+	textField.textAlignment = UITextAlignmentCenter;
+	[textField setDelegate:self];
+	[textField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
+	
+	return textField;
+}
+						
+
+
+- (void) updateUITextField:(FieldDescription*) field with:(UITextField*) textField {
+	if ([[tempValues allKeys] containsObject:field]) {
+		textField.text = [tempValues objectForKey:field];
+	} else {
+		SEL selector = NSSelectorFromString(field.field);
+		textField.text = [authenticator performSelector:selector] ;
+	}
+	textField.font	= [UIFont systemFontOfSize:[(NSNumber*) field.data intValue]];
+	
+}
+											 
+- (void) setValueForUITextField:(FieldDescription*) field {
+	
+	SEL selector = NSSelectorFromString([field setterField]);
+	[authenticator performSelector:selector withObject:[tempValues objectForKey:field]];
+
+}
+
+- (UISegmentedControl*) setupUISegmentedControl:(FieldDescription*) field {
+	UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems:(NSArray*)field.data];
+	segmentedControl.frame = field.frame;
+	[segmentedControl addTarget:self action:@selector(segmentedControllValueChanged:) forControlEvents:UIControlEventValueChanged];
+	return segmentedControl;
+}
+
+- (void) updateUISegmentedControl:(FieldDescription*) field with:(UISegmentedControl*) segmentedControl {
+	for (int i=0; i < segmentedControl.numberOfSegments;i++) {
+		if ([[authenticator.region name] isEqualToString:[segmentedControl titleForSegmentAtIndex:i]]) {
+			[segmentedControl setSelectedSegmentIndex:i];
+		}
+	}
+}
+	 
+- (void) setValueForUISegmentedControl:(FieldDescription*) field {
+	NSString * region_name = [tempValues objectForKey:field];
+	for (Region* region in regions) {
+		if ([[region name] isEqualToString:region_name]) {
+			authenticator.region = region;
+		}
+	}
+	
+}	 
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *identifier;
-    
-    NSUInteger row = [indexPath row];
+	NSUInteger section = [indexPath section];
 	
-	switch (row) {
-		case kNameRowIndex:
-			identifier = @"TextCellIdentifier";
-			break;
-		case kSerialRowIndex:
-			identifier = @"EnableCellIdentifier";
-			break;
-		case kKeyRowIndex:
-			identifier = @"GoodBadCellIdentifier";
-			break;
-	}
+	NSString *identifier = [NSString stringWithFormat:@"%d",section];
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-	
     if (cell == nil) {
-		
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-									   reuseIdentifier:identifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		
-		// set up the label
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 75, 25)];
-		label.textAlignment = UITextAlignmentLeft;
-		label.tag = kLabelTag;
-		label.font = [UIFont boldSystemFontOfSize:14];
-		[cell.contentView addSubview:label];
-		[label release];
-		
-		// set up the text field
-		UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(90, 12, 200, 25)];
-		textField.clearsOnBeginEditing = NO;
-		[textField setDelegate:self];
-		[textField addTarget:self action:@selector(textFieldDone:) 
-			forControlEvents:UIControlEventEditingDidEndOnExit];
-		[cell.contentView addSubview:textField];
-		
+		FieldDescription * field = (FieldDescription*) [fields objectAtIndex:section];
+		SEL selector = NSSelectorFromString([NSString stringWithFormat:@"setup%@:",NSStringFromClass(field.klass)]);
+		UIControl *control = (UIControl*)[self performSelector:selector withObject:field];
+		[cell.contentView addSubview:control];
     }
-	// populate controls
-    UILabel *label = (UILabel *)[cell viewWithTag:kLabelTag];
-    UITextField *textField = nil;
-    for (UIView *oneView in cell.contentView.subviews)
-    {
-        if ([oneView isMemberOfClass:[UITextField class]])
-            textField = (UITextField *)oneView;
-    }
-    label.text = [fieldLabels objectAtIndex:row];
-    NSNumber *rowAsNum = [[NSNumber alloc] initWithInt:row];
 	
-    switch (row) {
-        case kNameRowIndex:
-            if ([[tempValues allKeys] containsObject:rowAsNum])
-                textField.text = [tempValues objectForKey:rowAsNum];
-            else
-                textField.text = authenticator.name;
-            break;
-			
-		case kSerialRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-                textField.text = [tempValues objectForKey:rowAsNum];
-            else
-                textField.text = authenticator.serial;
-			break;
-		case kKeyRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-                textField.text = [tempValues objectForKey:rowAsNum];
-            else
-				
-                textField.text = authenticator.key;
-			break;
-        default:
-            break;
-    }
-    if (textFieldBeingEdited == textField)
-        textFieldBeingEdited = nil;
+	UIControl * control = (UIControl*) [cell.contentView.subviews objectAtIndex:0];
+	control.tag = section;
+	FieldDescription * field = (FieldDescription*) [fields objectAtIndex:section];
+	SEL selector = NSSelectorFromString([NSString stringWithFormat:@"update%@:with:",NSStringFromClass(field.klass)]);
+	[self performSelector:selector withObject:field withObject:control];
 	
-    textField.tag = row;
-    [rowAsNum release];
+	
+	if (textFieldBeingEdited == control) textFieldBeingEdited = nil;
 	return cell;
 }
 
@@ -291,24 +350,30 @@
 
 - (void)dealloc {
 	[authenticator release];
-	[fieldLabels release];
 	[tempValues release];
 	[textFieldBeingEdited release];
 	[detailMode release];
+	[fields release];
 	
     [super dealloc];
 }
 
 #pragma mark Text Field Delegate Methods
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.textFieldBeingEdited = textField;
 }
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textField.tag];
-    [tempValues setObject:textField.text forKey:tagAsNum];
-    [tagAsNum release];
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [tempValues setObject:textField.text forKey:(FieldDescription*) [fields objectAtIndex:textField.tag]];
+}
+
+- (IBAction) segmentedControllValueChanged:(id)sender {
+	UISegmentedControl* control = (UISegmentedControl*) sender;
+	FieldDescription * field = [fields objectAtIndex:control.tag];
+	NSString * region_name = [control titleForSegmentAtIndex:control.selectedSegmentIndex];
+	if (![[authenticator.region name] isEqualToString:region_name]) {
+		[tempValues setObject:region_name forKey:field];
+	}
+	
 }
 
 

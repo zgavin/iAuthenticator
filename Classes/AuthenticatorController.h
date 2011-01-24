@@ -18,6 +18,7 @@
 #define kDetailModeEdit			0
 #define kDetailModeAdd			1
 
+
 @class Authenticator;
 
 
@@ -25,12 +26,15 @@
 
 @interface AuthenticatorController : UITableViewController <UITextFieldDelegate> {
 	Authenticator *authenticator;
-	NSArray *fieldLabels;
 	NSMutableDictionary *tempValues;
 	UITextField *textFieldBeingEdited;
 	NSNumber *detailMode;
     UIView *footerView;
+	NSArray * fields;
+	NSArray * regions;
 }
+
+
 
 @property (nonatomic, retain) Authenticator *authenticator;
 @property (nonatomic, retain) NSArray *fieldLabels;
@@ -48,3 +52,5 @@
 -(NSManagedObjectModel*) managedObjectModel;
 
 @end
+
+

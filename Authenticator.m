@@ -38,7 +38,6 @@ const unsigned char public_exponent[] = {0x01,0x01};
     }
 	
 	NSData* hex_key  = [self.key parseHex];
-	
 	CCHmac(kCCHmacAlgSHA1, hex_key.bytes, hex_key.length, to_sign, sizeof(to_sign), mac);
 	
 	int offset = mac[19] & 0x0F;
@@ -82,15 +81,66 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	
 	NSData *body = [NSData dataWithBytes:output length:length];
 	
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.%@.mobileservice.blizzard.com/enrollment/enroll.htm",region.code]];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.%@.mobileservice.blizzard.com/enrollment/enroll.htm",self.region.code]];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	[request setHTTPBody:body];
 	[request setHTTPMethod:@"POST"];
-				  
-	[NSURLConnection connectionWithRequest:request delegate: self];
+	[request addValue:@"128" forHTTPHeaderField:@"Content-length"];
+	[request addValue:@"application/octet-stream" forHTTPHeaderField:@"Content-type"];
+	 NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	 if (connection && !receivedData) {
+		 receivedData = [[NSMutableData data] retain];
+	 } 
+			
+	
 
 	
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	[receivedData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [receivedData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	NSLog(@"Received %d bytes",receivedData.length);
+	uint64_t milliseconds = 0;
+	
+	[receivedData getBytes:&milliseconds length:8];
+	NSLog(@"%@",[NSData dataWithBytes:&milliseconds length:8]);
+	milliseconds = CFSwapInt64BigToHost(milliseconds);
+	
+	NSTimeInterval seconds = milliseconds / 10.0;
+	
+	
+	NSLog(@"Time: %f",seconds);
+	
+	uint8_t data[37];
+	[receivedData getBytes:data range:NSMakeRange(8, 37)];
+	
+	for (int i=0; i<sizeof(data); i++) {
+		data[i] ^= enroll_key[i];
+	}
+	
+	NSMutableString *new_key = [NSMutableString	stringWithString:@""];
+	for (int i=0; i<20; i++) {
+		[new_key appendFormat:@"%02x",data[i]];
+	}
+	
+	NSString *new_serial = [[NSString alloc] initWithBytes:&data[20] length:17 encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"Serial: %@",new_serial);
+	NSLog(@"Key: %@", new_key);
+	[connection release];
+}
+	 
+- (void) dealloc {
+	if(receivedData) [receivedData release];
+	[super dealloc];
+}
 
 @end

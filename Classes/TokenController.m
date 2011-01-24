@@ -46,7 +46,7 @@
 	for (TokenView* view in tokenViews) { 
 		BOOL animated = (view == [self tokenView]);
 		[view updateTokens:animated];
-		[view.authenticator enroll];
+		//[view.authenticator enroll];
 	}
 	[self updateTimer];
 }
@@ -158,9 +158,9 @@
 		[scrollView addSubview:tokenView];
 		authenticators++;
 	} else {
+		
 		for (authenticators; authenticators < fetchResults.count; authenticators++) {
 			Authenticator *authenticator = [fetchResults objectAtIndex:authenticators];
-			
 			TokenView *tokenView = [[TokenView alloc] initWithAuthenticator:authenticator];
 			CGRect rect = tokenView.frame;
 			rect.size.height = scrollView.frame.size.width;
