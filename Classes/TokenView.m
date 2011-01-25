@@ -54,6 +54,7 @@
         [self addSubview: contentView];
 		
     }
+
 	
 	self.authenticator = inAuthenticator;
 	self.name.text = authenticator.name;
@@ -61,7 +62,7 @@
 	codes = [[NSMutableArray arrayWithObjects:code1,code2,code3,code4,code5,nil] retain];
 	
 	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970];
-	int token_time = seconds - fmod(seconds,30)-120;
+	int token_time = seconds -120;
 	double a = 0;
 	double y = -60;
 	for (UILabel* label in codes) {
@@ -102,10 +103,8 @@
 	if (codes.count == 0) { return; }
 	UILabel* current_label = [codes objectAtIndex:0];
 	current_label.text = [authenticator token];
-
 	[codes removeObjectAtIndex:0];
-	[codes insertObject:current_label atIndex:codes.count];
-
+	[codes addObject:current_label];
 	if (animated) {
 		[UIView beginAnimations:@"moveLabels" context:nil];
 		[UIView setAnimationDuration:1.5];

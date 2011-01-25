@@ -53,12 +53,16 @@
 	
 - (void) updateTokens:(NSTimer*) timer {
 	Region * region = (Region*) [timer userInfo];
-	for (TokenView* view in tokenViews) { 
-		if ([view.authenticator.region isEqual:region]) {
-			BOOL animated = (view == [self tokenView]);
-			[view updateTokens:animated];
+	NSDate* now = [NSDate date];
+	NSTimeInterval seconds = [now timeIntervalSince1970]+[region.offset doubleValue];
+	if(30.0-fmod(seconds,30.0) > .05) {
+		for (TokenView* view in tokenViews) { 
+			if ([view.authenticator.region isEqual:region]) {
+				BOOL animated = (view == [self tokenView]);
+				[view updateTokens:animated];
+			}
+			
 		}
-		
 	}
 	[self updateTimer:region];
 }
