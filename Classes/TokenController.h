@@ -35,6 +35,7 @@
 - (void)setup;
 - (void)reloadData;
 - (void)restoreSavedView;
+- (void)applicationWillEnterForeground:(UIApplication *)application;
 
 - (NSManagedObjectContext*) managedObjectContext;
 

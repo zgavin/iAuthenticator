@@ -125,6 +125,7 @@
 	}
 }
 
+
 - (void) resetTopLabel {
 	UILabel* moved = [codes objectAtIndex:0];
 	CGRect f = moved.frame;
@@ -167,6 +168,15 @@
 	}
 	authenticator = inAuthenticator;
 	name.text = authenticator.name;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970];
+	int token_time = seconds -120;
+	for (UILabel* label in codes) {
+		label.text = [authenticator tokenAtTimeinterval:token_time];
+		token_time += 30;
+	}
 }
 
 - (void)viewDidUnload {

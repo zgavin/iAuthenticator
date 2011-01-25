@@ -91,6 +91,17 @@
     }
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+	for(NSTimer* timer in [timers allValues]) {
+		Region* region = (Region*) [timer userInfo];
+		[timer invalidate];
+		[self updateTimer:region];
+	}
+	for(TokenView* view in tokenViews) {
+		[view applicationWillEnterForeground:application];
+	}
+}
+
 -(NSManagedObjectContext*) managedObjectContext {
 	iAuthenticatorAppDelegate *appDelegate = (iAuthenticatorAppDelegate*)  [[UIApplication sharedApplication] delegate];
 	return [appDelegate managedObjectContext];

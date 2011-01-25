@@ -43,5 +43,6 @@
 -(void) stopTimer;
 -(void) resetTopLabel;
 -(void) animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context ;
+- (void)applicationWillEnterForeground:(UIApplication *)application ;
 
 @end

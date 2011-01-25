@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Region.h"
+#import "FieldDescription.h"
 #define kLabelTag                    4096
 #define kSwitchTag					 4097
 
@@ -45,6 +46,8 @@
 - (IBAction)textFieldDone:(id)sender;
 - (IBAction)buttonPressed:(id)sender;
 
+
+- (void) setValueForUISegmentedControl:(FieldDescription*) field;
 -(NSManagedObjectContext*) managedObjectContext;
 -(NSManagedObjectModel*) managedObjectModel;
 

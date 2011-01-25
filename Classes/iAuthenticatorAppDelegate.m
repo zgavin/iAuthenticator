@@ -24,6 +24,11 @@
 	[self loadData];
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+	
+	[tokenController applicationWillEnterForeground:application];
+}
+
 - (void) loadData {
 	// create initial data if none exists
 	NSManagedObjectContext *context = [self managedObjectContext];

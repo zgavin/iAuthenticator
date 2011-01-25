@@ -140,6 +140,7 @@
 		C9634CE412E799A10039559E /* bn_s_mp_sqr.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6D12E799A10039559E /* bn_s_mp_sqr.c */; };
 		C9634CE512E799A10039559E /* bn_s_mp_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6E12E799A10039559E /* bn_s_mp_sub.c */; };
 		C9634CE612E799A10039559E /* bncore.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6F12E799A10039559E /* bncore.c */; };
+		C993B80F12EF830E00ED59A7 /* iphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C993B80E12EF830E00ED59A7 /* iphone-icon.png */; };
 		C9B8E6BC12ED2CD700F9FE90 /* FieldDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8E6BB12ED2CD700F9FE90 /* FieldDescription.m */; };
 		C9CE91CE12DE4B9A007FD043 /* iAuthenticator.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */; };
 		C9CE91E312DE5109007FD043 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CE91E112DE5109007FD043 /* clock.png */; };
@@ -299,6 +300,7 @@
 		C9634C6D12E799A10039559E /* bn_s_mp_sqr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_s_mp_sqr.c; sourceTree = "<group>"; };
 		C9634C6E12E799A10039559E /* bn_s_mp_sub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_s_mp_sub.c; sourceTree = "<group>"; };
 		C9634C6F12E799A10039559E /* bncore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bncore.c; sourceTree = "<group>"; };
+		C993B80E12EF830E00ED59A7 /* iphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-icon.png"; sourceTree = "<group>"; };
 		C9B8E6BA12ED2CD700F9FE90 /* FieldDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDescription.h; sourceTree = "<group>"; };
 		C9B8E6BB12ED2CD700F9FE90 /* FieldDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDescription.m; sourceTree = "<group>"; };
 		C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = iAuthenticator.xcdatamodel; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 		C9CE934812DE5716007FD043 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C993B80E12EF830E00ED59A7 /* iphone-icon.png */,
 				C90246A512EE9BE0006B33EF /* token.png */,
 				C93D357F12EE2D0300EDC616 /* background.png */,
 				C9CE91E112DE5109007FD043 /* clock.png */,
@@ -649,6 +652,7 @@
 				C933D8A312DF9C6F00A797ED /* TokenView.xib in Resources */,
 				C93D358012EE2D0300EDC616 /* background.png in Resources */,
 				C90246A612EE9BE0006B33EF /* token.png in Resources */,
+				C993B80F12EF830E00ED59A7 /* iphone-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

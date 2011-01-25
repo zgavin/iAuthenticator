@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TokenController.h"
 
 @interface iAuthenticatorAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 
@@ -16,6 +17,7 @@
     
 	UIWindow *window;
     UITabBarController *tabBarController;	
+	TokenController *tokenController;
 
 }
 
@@ -25,6 +27,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet TokenController * tokenController;
 
 - (void) loadData;
 - (NSString *)applicationDocumentsDirectory;
