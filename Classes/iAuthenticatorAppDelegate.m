@@ -14,6 +14,7 @@
 
 @synthesize window;
 @synthesize tabBarController;
+@synthesize tokenController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

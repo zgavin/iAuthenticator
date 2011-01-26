@@ -140,6 +140,7 @@
 		C9634CE412E799A10039559E /* bn_s_mp_sqr.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6D12E799A10039559E /* bn_s_mp_sqr.c */; };
 		C9634CE512E799A10039559E /* bn_s_mp_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6E12E799A10039559E /* bn_s_mp_sub.c */; };
 		C9634CE612E799A10039559E /* bncore.c in Sources */ = {isa = PBXBuildFile; fileRef = C9634C6F12E799A10039559E /* bncore.c */; };
+		C969013A12F0BEEF00CEB465 /* iauthenticator_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C969013912F0BEEF00CEB465 /* iauthenticator_icon.png */; };
 		C993B80F12EF830E00ED59A7 /* iphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C993B80E12EF830E00ED59A7 /* iphone-icon.png */; };
 		C9B8E6BC12ED2CD700F9FE90 /* FieldDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8E6BB12ED2CD700F9FE90 /* FieldDescription.m */; };
 		C9CE91CE12DE4B9A007FD043 /* iAuthenticator.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */; };
@@ -300,6 +301,8 @@
 		C9634C6D12E799A10039559E /* bn_s_mp_sqr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_s_mp_sqr.c; sourceTree = "<group>"; };
 		C9634C6E12E799A10039559E /* bn_s_mp_sub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_s_mp_sub.c; sourceTree = "<group>"; };
 		C9634C6F12E799A10039559E /* bncore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bncore.c; sourceTree = "<group>"; };
+		C96900D912F0B2AB00CEB465 /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
+		C969013912F0BEEF00CEB465 /* iauthenticator_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iauthenticator_icon.png; sourceTree = "<group>"; };
 		C993B80E12EF830E00ED59A7 /* iphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-icon.png"; sourceTree = "<group>"; };
 		C9B8E6BA12ED2CD700F9FE90 /* FieldDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDescription.h; sourceTree = "<group>"; };
 		C9B8E6BB12ED2CD700F9FE90 /* FieldDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDescription.m; sourceTree = "<group>"; };
@@ -389,6 +392,7 @@
 				C9CE934812DE5716007FD043 /* Images */,
 				8D1107310486CEB800E47090 /* iAuthenticator-Info.plist */,
 				C9CE91CD12DE4B9A007FD043 /* iAuthenticator.xcdatamodel */,
+				C96900D912F0B2AB00CEB465 /* dist.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -570,6 +574,7 @@
 		C9CE934812DE5716007FD043 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C969013912F0BEEF00CEB465 /* iauthenticator_icon.png */,
 				C993B80E12EF830E00ED59A7 /* iphone-icon.png */,
 				C90246A512EE9BE0006B33EF /* token.png */,
 				C93D357F12EE2D0300EDC616 /* background.png */,
@@ -653,6 +658,7 @@
 				C93D358012EE2D0300EDC616 /* background.png in Resources */,
 				C90246A612EE9BE0006B33EF /* token.png in Resources */,
 				C993B80F12EF830E00ED59A7 /* iphone-icon.png in Resources */,
+				C969013A12F0BEEF00CEB465 /* iauthenticator_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -823,6 +830,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iAuthenticator_Prefix.pch;
@@ -845,6 +853,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
@@ -862,6 +871,39 @@
 			};
 			name = Release;
 		};
+		C96900D612F0B24E00CEB465 /* Ad-hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = dist.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.2;
+			};
+			name = "Ad-hoc";
+		};
+		C96900D712F0B24E00CEB465 /* Ad-hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = dist.plist;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iAuthenticator_Prefix.pch;
+				HEADER_SEARCH_PATHS = "/include/**";
+				INFOPLIST_FILE = "iAuthenticator-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = iAuthenticator;
+			};
+			name = "Ad-hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -870,6 +912,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				C96900D712F0B24E00CEB465 /* Ad-hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -879,6 +922,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				C96900D612F0B24E00CEB465 /* Ad-hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

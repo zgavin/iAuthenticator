@@ -1,7 +1,7 @@
 TiAuthenticator
 v7
 r0
-t317686549.348336
+t317768577.979700
 cCheck dependencies
 cProcessInfoPlistFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist iAuthenticator-Info.plist
 cCompileXIB /src/iAuthenticator/Classes/../MainWindow.xib
@@ -14,6 +14,7 @@ cCompileXIB /src/iAuthenticator/Classes/TokenView.xib
 cCpResource build/Debug-iphonesimulator/iAuthenticator.app/background.png background.png
 cCpResource build/Debug-iphonesimulator/iAuthenticator.app/token.png token.png
 cCpResource build/Debug-iphonesimulator/iAuthenticator.app/iphone-icon.png iphone-icon.png
+cCpResource build/Debug-iphonesimulator/iAuthenticator.app/iauthenticator_icon.png iauthenticator_icon.png
 cProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-gfbukuypkawprpcsioqkgfiklrdh/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
 cProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-efdebdvbqravkwcjpturrykxlrkz/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 c com.apple.compilers.gcc.4_2
 cDataModelCompile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom /src/iAuthenticator/iAuthenticator.xcdatamodel
@@ -1309,9 +1310,9 @@ i<UIKit/UIKit.h>
 i"TokenController.h"
 
 N/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m
-c000000004D3F45C0000000000000140E
-t1295992256
-s5134
+c000000004D4080D5000000000000142B
+t1296072917
+s5163
 i"iAuthenticatorAppDelegate.h"
 i"Region.h"
 i"Authenticator.h"
@@ -1389,11 +1390,11 @@ i<time.h>
 i"bigint.h"
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
-t1295993749
-s544
+t1296075777
+s578
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM
-t1295993749
+t1296074545
 s102
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/AuthenticatorController.nib
@@ -1401,15 +1402,15 @@ t1295968773
 s971
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist
-t1295968766
-s619
+t1296075777
+s692
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/MainWindow.nib
 t1295990850
 s2418
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/PkgInfo
-t1295968766
+t1296075777
 s8
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/SecondView.nib
@@ -1449,12 +1450,16 @@ t1295968766
 s1129
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
-t1295993749
-s202216
+t1296074545
+s202524
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator.mom
 t1295968766
 s2113
+
+N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iauthenticator_icon.png
+t1296075457
+s10867
 
 N/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iphone-icon.png
 t1295993748
@@ -2022,8 +2027,8 @@ t1295968766
 s16591
 
 N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o
-t1295993748
-s68376
+t1296074545
+s69364
 
 N/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o
 t1295968785
@@ -2051,6 +2056,11 @@ s228
 i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 i<CoreData/CoreData.h>
+
+N/src/iAuthenticator/iauthenticator_icon.png
+c000000004D408ABB0000000000002A73
+t1296075451
+s10867
 
 N/src/iAuthenticator/iphone-icon.png
 c000000004BAA4CB30000000000001885
@@ -2127,13 +2137,13 @@ t1295937912
 s16326640
 
 NiAuthenticator-Info.plist
-c000000004D3D9544000000000000038D
-t1295881540
-s909
+c000000004D408BFD00000000000003B3
+t1296075773
+s947
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies317686547#317686548#0(0"0(0#1#0"8628132288#0"0#
+lSLF07#2@18"Check dependencies317768577#317768577#0(0"0(0#1#0"8613906816#0"0#
 
 CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/Authenticator-5C1426A588B8039A.o /src/iAuthenticator/Classes/Authenticator.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -3956,8 +3966,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@47"Compile /src/iAuthenticator/Classes/../bncore.c317661590#317661590#0(0"0(0#0#39"/src/iAuthenticator/Classes/../bncore.c8603990080#1399"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-efdebdvbqravkwcjpturrykxlrkz/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/../bncore.c -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/bncore.o0#
 
 CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s317686548.602675
-e317686548.795024
+s317767343.750129
+e317767345.221950
 r1
 xCompileC
 xbuild/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o
@@ -3966,9 +3976,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-o/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m:160: warning: property 'tokenController' requires method '-tokenController' to be defined - use @synthesize, @dynamic or provide a method implementation
-o/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m:160: warning: property 'tokenController' requires the method 'setTokenController:' to be defined - use @synthesize, @dynamic or provide a method implementation
-lSLF07#2@63"Compile /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m317686548#317686548#0(425"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m:160: warning: property 'tokenController' requires method '-tokenController' to be defined - use @synthesize, @dynamic or provide a method implementation/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m:160: warning: property 'tokenController' requires the method 'setTokenController:' to be defined - use @synthesize, @dynamic or provide a method implementation2(22@138"Property 'tokenController' requires method '-tokenController' to be defined - use @synthesize, @dynamic or provide a method implementation317686548#0#209#0(6@55"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m317685056#160#0#160#0#0"0(22@145"Property 'tokenController' requires the method 'setTokenController:' to be defined - use @synthesize, @dynamic or provide a method implementation317686548#209#216#0(6@55"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m317685056#160#0#160#0#0"0(0#0#55"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m8639597248#1488"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-gfbukuypkawprpcsioqkgfiklrdh/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o0#
+lSLF07#2@63"Compile /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m317767343#317767345#0(0"0(0#0#55"/src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m8609516448#1488"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -include /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-gfbukuypkawprpcsioqkgfiklrdh/iAuthenticator_Prefix.pch -c /src/iAuthenticator/Classes/iAuthenticatorAppDelegate.m -o /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticatorAppDelegate.o0#
 
 CCompileC build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/main.o /src/iAuthenticator/Classes/../main.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s317661585.417023
@@ -4106,6 +4114,15 @@ xbuild/Debug-iphonesimulator/iAuthenticator.app/gear.png
 xgear.png
 lSLF07#2@13"Copy gear.png317630710#317630710#0(0"0(0#0#28"/src/iAuthenticator/gear.png8617077888#478"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /src/iAuthenticator/gear.png /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
 
+CCpResource build/Debug-iphonesimulator/iAuthenticator.app/iauthenticator_icon.png iauthenticator_icon.png
+s317768257.685856
+e317768257.691302
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/iAuthenticator.app/iauthenticator_icon.png
+xiauthenticator_icon.png
+lSLF07#2@28"Copy iauthenticator_icon.png317768257#317768257#0(0"0(0#0#43"/src/iAuthenticator/iauthenticator_icon.png8611772448#431"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /src/iAuthenticator/iauthenticator_icon.png /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
+
 CCpResource build/Debug-iphonesimulator/iAuthenticator.app/iphone-icon.png iphone-icon.png
 s317686548.578374
 e317686548.602086
@@ -4138,32 +4155,32 @@ CDataModelCompile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator
 r0
 
 CGenerateDSYMFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
-s317686549.286639
-e317686549.345451
+s317767345.909323
+e317767345.967277
 r1
 xGenerateDSYMFile
 x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM
 x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
-lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/iAuthenticator.app.dSYM build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator317686549#317686549#0(0"0(0#0#81"/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator8639904864#347"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM0#
+lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/iAuthenticator.app.dSYM build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator317767345#317767345#0(0"0(0#0#81"/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator8610311648#347"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app.dSYM0#
 
 CLd /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator normal i386
-s317686549.125350
-e317686549.286524
+s317767345.222137
+e317767345.909188
 r1
 xLd
 x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator
 xnormal
 xi386
-lSLF07#2@86"Link /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator317686549#317686549#0(0"0(0#0#0"8617640832#908"    cd /src/iAuthenticator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/src/iAuthenticator/build/Debug-iphonesimulator -L/src/iAuthenticator -F/src/iAuthenticator/build/Debug-iphonesimulator -filelist /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticator.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreFoundation -framework CoreData -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator0#
+lSLF07#2@86"Link /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator317767345#317767345#0(0"0(0#0#0"8612361568#908"    cd /src/iAuthenticator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/src/iAuthenticator/build/Debug-iphonesimulator -L/src/iAuthenticator -F/src/iAuthenticator/build/Debug-iphonesimulator -filelist /src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/Objects-normal/i386/iAuthenticator.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreFoundation -framework CoreData -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/iAuthenticator0#
 
 CProcessInfoPlistFile /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist iAuthenticator-Info.plist
-s317630710.199933
-e317630710.204780
+s317768577.960268
+e317768577.964438
 r1
 xProcessInfoPlistFile
 x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist
 xiAuthenticator-Info.plist
-lSLF07#2@33"Process iAuthenticator-Info.plist317630710#317630710#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator-Info.plist8618325600#505"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility iAuthenticator-Info.plist -genpkginfo /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist0#
+lSLF07#2@33"Process iAuthenticator-Info.plist317768577#317768577#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator-Info.plist8634543488#443"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility iAuthenticator-Info.plist -genpkginfo /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app/Info.plist0#
 
 CProcessPCH /var/folders/0n/0nXOa92lGgaU33Z7+hRQbE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-drwxjifvsllszcaigubmuembehzm/iAuthenticator_Prefix.pch.gch iAuthenticator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -4260,10 +4277,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@36"Precompile iAuthenticator_Prefix.pch317630711#317630712#0(0"0(0#0#45"/src/iAuthenticator/iAuthenticator_Prefix.pch8620801408#1404"    cd /src/iAuthenticator    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/iAuthenticator.hmap -F/src/iAuthenticator/build/Debug-iphonesimulator -I/src/iAuthenticator/build/Debug-iphonesimulator/include -I/include -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources/i386 -I/src/iAuthenticator/build/iAuthenticator.build/Debug-iphonesimulator/iAuthenticator.build/DerivedSources -c /src/iAuthenticator/iAuthenticator_Prefix.pch -o /var/folders/WL/WLCesgxqH28itTwZZUOHqU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iAuthenticator_Prefix-gfbukuypkawprpcsioqkgfiklrdh/iAuthenticator_Prefix.pch.gch0#
 
 CTouch /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
-s317686549.345554
-e317686549.348299
+s317768577.975900
+e317768577.979654
 r1
 xTouch
 x/src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app
-lSLF07#2@72"Touch /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app317686549#317686549#0(0"0(0#0#0"8638869792#247"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
+lSLF07#2@72"Touch /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app317768577#317768577#0(0"0(0#0#0"8613661152#247"    cd /src/iAuthenticator    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /src/iAuthenticator/build/Debug-iphonesimulator/iAuthenticator.app0#
 
