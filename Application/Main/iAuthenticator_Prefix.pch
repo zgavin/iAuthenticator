@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'iAuthenticator' target in the 'iAuthenticator' project
+//
+
+#ifdef __OBJC__
+	#define MR_SHORTHAND
+
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+	#import <CoreData/CoreData.h>
+	#import "CoreData+MagicalRecord.h"
+#endif
