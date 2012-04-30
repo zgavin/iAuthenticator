@@ -1,82 +1,78 @@
 //
-//  TokenController.m
+//  TokenView.m
 //  iAuthenticator
 //
-//  Created by Zachary Gavin on 1/12/11.
+//  Created by Zachary Gavin on 1/13/11.
 //  Copyright 2011 Zachary Gavin. All rights reserved.
 //
 
 #import "TokenController.h"
-#import "iAuthenticatorAppDelegate.h"
-#import "Authenticator+Custom.h"
-#import "TokenView.h"
-#import "NSArray+Enumerable.h"
-#import "NSMutableArray+Utility.h"
-#import <QuartzCore/QuartzCore.h>
-
-NSString* const TOKEN_CONTROLLER_TICK = @"TOKEN_CONTROLLER_TICK";
+#import "AuthenticatorController.h"
+#import "Region+Custom.h"
+#import "UIView+isVisible.h"
 
 @implementation TokenController
 
+@synthesize authenticator;
+
 - (void) viewDidLoad {
-	[self reloadData];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress:) name:AUTHENTICATOR_CONTROLLER_TICK object:nil];
+	if(self.authenticator) { [self refresh]; }
+}
+
+- (void) viewWillUnload {
 	
-	CALayer* layer = noAuthenticatorsView.layer;
-	layer.cornerRadius = 15;
-	layer.borderWidth = 1;
-	layer.borderColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.4 alpha:1].CGColor;
+}
+
+- (void) setAuthenticator:(Authenticator*) _authenticator {
+	authenticator = _authenticator;
+	if(self.isViewLoaded) { [self refresh]; }
+}
+
+- (void) updateProgress:(NSTimer*) _timer {
+	NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+	progressView.progress = (time - ((int) time / 30) *30) / 30.0;
+	NSArray* codeLabels = codesView.subviews;
+	if (![((UILabel*) [codeLabels objectAtIndex:codeLabels.count-1]).text isEqualToString:authenticator.token]) {
+		[self refresh];
+		if (self.view.visible) {
+			for (int i=0; i<codeLabels.count; i++) {
+				UILabel* label = [codeLabels objectAtIndex:i];
+				CGRect frame = label.frame;
+				frame.origin.y = 60*(i);
+				label.frame = frame;
+				label.alpha = .25*(i+1);
+			}
+			
+			[UIView animateWithDuration:1 animations:^{
+				for (int i=0; i<codeLabels.count; i++) {
+					UILabel* label = [codeLabels objectAtIndex:i];
+					CGRect frame = label.frame;
+					frame.origin.y = 60*(i-1);
+					label.frame = frame;
+					label.alpha = .25*i;
+				}
+			}];
+		}
+	}
+}
+
+- (void) refresh {
+	nameLabel.text = authenticator.name;
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:AUTHENTICATOR_UPDATE_NOTIFICATION object:nil];
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-	timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerUpdate:) userInfo:nil repeats:YES];
-}
-
-- (void) viewWillDisappear:(BOOL)animated {
-	[timer invalidate];
-}
-
-- (void) timerUpdate:(NSTimer*) timer {
-	[[NSNotificationCenter defaultCenter] postNotificationName:TOKEN_CONTROLLER_TICK object:self];
-}
-
-- (void) reloadData {
-	NSArray* authenticators = [Authenticator findAllSortedBy:@"name" ascending:YES];
+	NSArray* codeLabels = codesView.subviews;
 	
-	noAuthenticatorsView.hidden = (authenticators.count > 0);
-	
-	NSMutableArray* existingViews = [NSMutableArray arrayWithArray:[scrollView.subviews select:^(id view){ return [view isKindOfClass:[TokenView class]];}]];
-	[authenticators enumerateObjectsUsingBlock:^(Authenticator* authenticator,NSUInteger idx,BOOL* stop) {
-		TokenView* tokenView = [existingViews shift] ?: [[TokenView alloc] init];
-		tokenView.frame = CGRectMake(scrollView.frame.size.width*idx, 0, scrollView.frame.size.width, scrollView.frame.size.height);
-		tokenView.authenticator = authenticator;
-		
-		if(!tokenView.superview) [scrollView addSubview:tokenView];
-	}];
-	
-	for(UIView* view in existingViews) { [view removeFromSuperview]; }
-
-	pageControl.numberOfPages = authenticators.count ?: 1;
-	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width*authenticators.count, scrollView.frame.size.height);
-	pageControl.currentPage = self.page;
-}
-
-- (int) page {
-	CGFloat pageWidth = scrollView.frame.size.width;
-	return floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-}
-
-- (void) scrollViewDidScroll:(UIScrollView *)_scrollView {	
-	int tmp = self.page;
-	if(tmp != pageControl.currentPage) {
-		pageControl.currentPage = tmp;
+	NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+	for (int i=0; i<codeLabels.count; i++) {
+		UILabel* label = [codesView.subviews objectAtIndex:i];
+		label.text = [authenticator tokenAtTimeinterval:time-((((int) codeLabels.count)-i-1)*30)];
+		label.alpha = .25*i;
 	}
 }
 
 - (void) dealloc {
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:AUTHENTICATOR_UPDATE_NOTIFICATION object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:AUTHENTICATOR_CONTROLLER_TICK object:nil];
 }
 
-
 @end
+
