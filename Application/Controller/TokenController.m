@@ -74,6 +74,9 @@ NSString* const TOKEN_CONTROLLER_TICK = @"TOKEN_CONTROLLER_TICK";
 	}
 }
 
+- (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:AUTHENTICATOR_UPDATE_NOTIFICATION object:nil];
+}
 
 
 @end
