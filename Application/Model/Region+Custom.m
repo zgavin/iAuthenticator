@@ -7,8 +7,6 @@
 //
 
 #import "Region+Custom.h"
-#import "NSURLConnection+AsynchronousRequest.h"
-
 
 @implementation Region (Custom)
 
@@ -19,8 +17,10 @@
 - (void) syncWithCompletionBlock:(void(^)()) callback {
 	NSTimeInterval systemTime = [[NSDate date] timeIntervalSince1970];
 	
-	NSString *url = [NSString stringWithFormat:@"http://m.%@.mobileservice.blizzard.com/enrollment/time.htm",self.code];
-	[NSURLConnection asyncSimple:url callback:^(NSData* data, NSURLResponse* response){
+	NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.%@.mobileservice.blizzard.com/enrollment/time.htm",self.code]];
+
+	
+	[NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error){
 		uint64_t milliseconds = 0;
 		[data getBytes:&milliseconds length:8];
 		milliseconds = CFSwapInt64BigToHost(milliseconds);
@@ -49,7 +49,7 @@ static Region* northAmerica;
 		europe.name = @"Europe";
 		europe.code = @"EU";
 		
-		[[NSManagedObjectContext contextForCurrentThread] save];
+		[[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
 	}
 }
 

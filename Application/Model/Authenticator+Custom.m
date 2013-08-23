@@ -12,7 +12,6 @@
 #import <stdlib.h>
 #import "tommath.h"
 #import "NSString+Hex.h"
-#import "NSURLConnection+AsynchronousRequest.h"
 
 NSString* const AUTHENTICATOR_UPDATE_NOTIFICATION = @"AUTHENTICATOR_UPDATE_NOTIFICATION";
 
@@ -43,7 +42,7 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	
 	int offset = mac[19] & 0x0F;
 	long long selectedInt = ((mac[offset] & 0x7f) << 24) | ((mac[offset + 1] & 0xff) << 16) | ((mac[offset + 2] & 0xff) << 8) | (mac[offset + 3] & 0xff);
-	return [NSString stringWithFormat:@"%08d", selectedInt % 100000000];
+	return [NSString stringWithFormat:@"%08d", (int) selectedInt % 100000000];
 }
 
 - (void) enroll {
@@ -60,6 +59,8 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	int enroll_size = 37;
 	uint8_t enroll_key[enroll_size];
 	
+  
+  
 	for (int i=0; i< enroll_size; i++) {
 		enroll_key[i] = arc4random() % 256;
 	}
@@ -94,7 +95,7 @@ const unsigned char public_exponent[] = {0x01,0x01};
 	[request addValue:@"128" forHTTPHeaderField:@"Content-length"];
 	[request addValue:@"application/octet-stream" forHTTPHeaderField:@"Content-type"];
 	
-	[NSURLConnection asyncRequest:request success:^(NSData * receivedData, NSURLResponse * response) {
+	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* receivedData, NSError* error){
 		NSLog(@"Received %d bytes",receivedData.length);
 		uint64_t milliseconds = 0;
 		

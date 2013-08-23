@@ -10,13 +10,12 @@
 #import "Authenticator+Custom.h"
 
 
-@interface TokenController : UIViewController {
+@interface TokenCollectionViewCell : UICollectionViewCell {
 	IBOutlet UILabel* nameLabel;
 	IBOutlet UIView* codesView;
 	IBOutlet UIProgressView* progressView;
 	
 	Authenticator* authenticator;
-
 }
 
 @property (nonatomic,retain) Authenticator* authenticator;

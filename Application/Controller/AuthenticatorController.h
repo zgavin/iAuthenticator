@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Region.h"
 
-@class TokenController;
+@class TokenCollectionViewCell;
 
 extern NSString* const AUTHENTICATOR_CONTROLLER_TICK;
 
-@interface AuthenticatorController : UIViewController <UIScrollViewDelegate>{
-	IBOutlet UIScrollView* scrollView;
+@interface AuthenticatorController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>{
 	IBOutlet UIPageControl* pageControl;
 	IBOutlet UIView* noAuthenticatorsView;
+	IBOutlet UICollectionView* collectionView;
+	
+	NSArray* authenticators;
 	
 	NSTimer* timer;
 }

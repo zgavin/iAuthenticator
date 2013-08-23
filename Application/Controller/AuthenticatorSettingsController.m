@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 NSString* const SYNC_TEXT = @"Sync Authenticator";
+NSString* const REQUEST_TEXT = @"Request From Blizzard";
 
 @implementation AuthenticatorSettingsController
 
@@ -22,14 +23,19 @@ NSString* const SYNC_TEXT = @"Sync Authenticator";
 	layer.borderWidth = 1;
 	layer.borderColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.4 alpha:1].CGColor;
 	
-	if (self.authenticator) { [self refresh]; }
 	
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save)];	
+	keyTextField.adjustsFontSizeToFitWidth = YES;
+	keyTextField.minimumFontSize = 6;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[self refresh];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-	if(self.authenticator && !self.authenticator.objectID.persistentStore) { [self.authenticator deleteEntity]; }
+	if(self.authenticator && !self.authenticator.objectID.persistentStore) {
+		[self.authenticator deleteEntity];
+	}
 }
 
 - (void) setAuthenticator:(Authenticator *) _authenticator {
@@ -40,32 +46,47 @@ NSString* const SYNC_TEXT = @"Sync Authenticator";
 }
 
 - (void) refresh {
-	nameTextField.text = authenticator.name;
-	serialTextField.text = authenticator.serial;
-	keyTextField.text = authenticator.key;
-	regionSegmentedControl.selectedSegmentIndex = (authenticator.region == [Region northAmerica]  ? 0 : 1);
-	regionSegmentedControl.enabled = NO;
-	[syncButton setTitle:SYNC_TEXT forState:UIControlStateNormal];
-	
-	self.title = authenticator.name;
+	if(authenticator) {
+		[@{@"name":nameTextField,@"serial":serialTextField,@"key":keyTextField} enumerateKeysAndObjectsUsingBlock:^(NSString* key,UITextField* field, BOOL* stop) {
+			field.text = [authenticator valueForKey:key];
+		}];
+			
+		regionSegmentedControl.selectedSegmentIndex = (authenticator.region == [Region northAmerica]  ? 0 : 1);
+		regionSegmentedControl.enabled = NO;
+		
+		[syncButton setTitle:SYNC_TEXT forState:UIControlStateNormal];
+		
+		self.title = authenticator.name;
+	} else {
+		[@[nameTextField,serialTextField,keyTextField] enumerateObjectsUsingBlock:^(UITextField* field,NSUInteger idx,BOOL * stop) {
+			field.text = @"";
+		}];
+		
+		regionSegmentedControl.enabled = YES;
+		
+		self.title = @"New Authenticator";
+		
+		[syncButton setTitle:REQUEST_TEXT forState:UIControlStateNormal];
+	}
 }
 
 
-- (void) save {
+- (IBAction) save {
 	Authenticator* _authenticator = self.authenticator ?: [Authenticator createEntity];
 	
 	_authenticator.name = nameTextField.text;
 	_authenticator.serial = serialTextField.text;
 	_authenticator.key = keyTextField.text;
 	
-	[[NSManagedObjectContext contextForCurrentThread] save];
+	[[NSManagedObjectContext contextForCurrentThread] saveToPersistentStoreAndWait];
+	
 	[[NSNotificationCenter defaultCenter] postNotificationName:AUTHENTICATOR_UPDATE_NOTIFICATION object:self];
 	
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
 
-- (void) cancel {
+- (IBAction) cancel {
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -80,6 +101,7 @@ NSString* const SYNC_TEXT = @"Sync Authenticator";
 	} else {
 		Authenticator* _authenticator = [Authenticator createEntity];
 		_authenticator.region = regionSegmentedControl.selectedSegmentIndex == 0 ? [Region northAmerica] : [Region europe];
+		_authenticator.name = nameTextField.text;
 		self.authenticator = _authenticator;
 		[_authenticator enrollWithCompletionBlock:^(){
 			[self refresh];

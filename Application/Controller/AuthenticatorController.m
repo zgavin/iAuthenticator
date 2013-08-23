@@ -7,79 +7,67 @@
 //
 
 #import "AuthenticatorController.h"
-#import "iAuthenticatorAppDelegate.h"
+#import "AppDelegate.h"
 #import "Authenticator+Custom.h"
-#import "TokenController.h"
+#import "TokenCollectionViewCell.h"
 #import "NSArray+Enumerable.h"
 #import "NSMutableArray+Utility.h"
 #import <QuartzCore/QuartzCore.h>
+#import <objc/runtime.h>
 
 NSString* const AUTHENTICATOR_CONTROLLER_TICK = @"TOKEN_CONTROLLER_TICK";
 
 @implementation AuthenticatorController
 
-- (void) viewDidLoad {
-	[self reloadData];
+- (void) viewDidLoad {	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:AUTHENTICATOR_UPDATE_NOTIFICATION object:nil];
 	
-	CALayer* layer = noAuthenticatorsView.layer;
-	layer.cornerRadius = 15;
-	layer.borderWidth = 1;
-	layer.borderColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.4 alpha:1].CGColor;
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:AUTHENTICATOR_UPDATE_NOTIFICATION object:nil];
+	CGColorRef ref;
+	CGFloat components[] = {0,5,6,7};
+	ref = CGColorCreate(CGColorSpaceCreateDeviceCMYK(), components);
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+	[self refresh];
 	timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerUpdate:) userInfo:nil repeats:YES];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-	[timer invalidate];
+	[timer invalidate],timer=nil;
 }
 
 - (void) timerUpdate:(NSTimer*) timer {
 	[[NSNotificationCenter defaultCenter] postNotificationName:AUTHENTICATOR_CONTROLLER_TICK object:self];
 }
 
-- (void) reloadData {
-	NSArray* authenticators = [Authenticator findAllSortedBy:@"name" ascending:YES];
-	
-	noAuthenticatorsView.hidden = (authenticators.count > 0);
-	
-	NSMutableArray* existingControllers = [NSMutableArray arrayWithArray:self.childViewControllers];
-	[authenticators enumerateObjectsUsingBlock:^(Authenticator* authenticator,NSUInteger idx,BOOL* stop) {
-		TokenController* controller = [existingControllers shift] ?: [[TokenController alloc] init];
-		controller.view.frame = CGRectMake(scrollView.frame.size.width*idx, 0, scrollView.frame.size.width, scrollView.frame.size.height);
-		controller.authenticator = authenticator;
-		
-		if(!controller.parentViewController) {
-			[self addChildViewController:controller];
-			[scrollView addSubview:controller.view];
-			[controller didMoveToParentViewController:self];
-		}
-	}];
-	
-	for(UIViewController* controller in existingControllers) { 
-		[controller willMoveToParentViewController:nil];
-		[controller.view removeFromSuperview];
-		[controller removeFromParentViewController];
-	}
-
-	pageControl.numberOfPages = authenticators.count ?: 1;
-	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width*authenticators.count, scrollView.frame.size.height);
-	pageControl.currentPage = self.page;
+- (NSInteger) collectionView:(UICollectionView *)_collectionView numberOfItemsInSection:(NSInteger)section {
+	return authenticators.count;
 }
 
-- (int) page {
-	CGFloat pageWidth = scrollView.frame.size.width;
-	return floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+- (UICollectionViewCell*) collectionView:(UICollectionView *)_collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	TokenCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TokenCell" forIndexPath:indexPath];
+	
+	cell.authenticator = authenticators[indexPath.row];
+	
+	return cell;
 }
 
-- (void) scrollViewDidScroll:(UIScrollView *)_scrollView {	
-	int tmp = self.page;
+- (void) scrollViewDidScroll:(UIScrollView *)_scrollView {
+	CGFloat pageWidth = _scrollView.frame.size.width;
+	int tmp =  floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;;
 	if(tmp != pageControl.currentPage) {
 		pageControl.currentPage = tmp;
 	}
+}
+
+- (void) refresh {
+	authenticators = [Authenticator findAllSortedBy:@"name" ascending:YES];
+	
+	noAuthenticatorsView.hidden = (authenticators.count > 0);
+	
+	pageControl.numberOfPages = authenticators.count ?: 1;
+	
+	[collectionView reloadData];
 }
 
 - (void) dealloc {

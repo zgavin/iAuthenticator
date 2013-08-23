@@ -6,58 +6,65 @@
 //  Copyright 2011 Zachary Gavin. All rights reserved.
 //
 
-#import "TokenController.h"
+#import "TokenCollectionViewCell.h"
 #import "AuthenticatorController.h"
 #import "Region+Custom.h"
 #import "UIView+isVisible.h"
+#import <QuartzCore/QuartzCore.h>
 
-@implementation TokenController
+@implementation TokenCollectionViewCell
 
 @synthesize authenticator;
 
-- (void) viewDidLoad {
+- (void) awakeFromNib {
+	[super awakeFromNib];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress:) name:AUTHENTICATOR_CONTROLLER_TICK object:nil];
-	if(self.authenticator) { [self refresh]; }
-}
 
-- (void) viewWillUnload {
-	
+	CALayer* layer = [self.contentView.subviews.lastObject layer];
+	layer.cornerRadius = 15;
+
+	layer = codesView.layer;
+	layer.cornerRadius = 10;
 }
 
 - (void) setAuthenticator:(Authenticator*) _authenticator {
 	authenticator = _authenticator;
-	if(self.isViewLoaded) { [self refresh]; }
+
+	[self refreshCodes];
 }
 
 - (void) updateProgress:(NSTimer*) _timer {
 	NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
 	progressView.progress = (time - ((int) time / 30) *30) / 30.0;
 	NSArray* codeLabels = codesView.subviews;
-	if (![((UILabel*) [codeLabels objectAtIndex:codeLabels.count-1]).text isEqualToString:authenticator.token]) {
-		[self refresh];
-		if (self.view.visible) {
-			for (int i=0; i<codeLabels.count; i++) {
-				UILabel* label = [codeLabels objectAtIndex:i];
-				CGRect frame = label.frame;
-				frame.origin.y = 60*(i);
-				label.frame = frame;
-				label.alpha = .25*(i+1);
-			}
-			
-			[UIView animateWithDuration:1 animations:^{
-				for (int i=0; i<codeLabels.count; i++) {
-					UILabel* label = [codeLabels objectAtIndex:i];
-					CGRect frame = label.frame;
-					frame.origin.y = 60*(i-1);
-					label.frame = frame;
-					label.alpha = .25*i;
-				}
-			}];
+	if ( ![[codeLabels.lastObject text] isEqualToString:authenticator.token] ) {
+		
+		[self refreshCodes];
+		
+		CGFloat offset = codesView.bounds.size.height / (codesView.subviews.count - 1) ;
+		
+		for (int i=0; i<codeLabels.count; i++) {
+			UILabel* label = codeLabels[i];
+			CGRect frame = label.frame;
+			frame.origin.y = offset*(i);
+			label.frame = frame;
+			label.alpha = .25*(i+1);
 		}
+		
+		[UIView animateWithDuration:1 animations:^{
+			for (int i=0; i<codeLabels.count; i++) {
+				UILabel* label = codeLabels[i];
+				CGRect frame = label.frame;
+				frame.origin.y = offset*(i-1);
+				label.frame = frame;
+				label.alpha = .25*i;
+			}
+		}];
+		
 	}
 }
 
-- (void) refresh {
+- (void) refreshCodes {
 	nameLabel.text = authenticator.name;
 	
 	NSArray* codeLabels = codesView.subviews;

@@ -1,26 +1,26 @@
 //
-//  iAuthenticatorAppDelegate.m
+//  AppDelegate.m
 //  iAuthenticator
 //
 //  Created by Zachary Gavin on 1/12/11.
 //  Copyright Zachary Gavin 2011. All rights reserved.
 //
 
-#import "iAuthenticatorAppDelegate.h"
+#import "AppDelegate.h"
 #import "Region+Custom.h"
 #import "Authenticator.h"
+#import "CoreData+MagicalRecord.h"
+#import "MagicalRecord.h"
 
-@implementation iAuthenticatorAppDelegate
+@implementation AppDelegate
 
 @synthesize window;
 
-- (void) awakeFromNib {
-	[MagicalRecordHelpers setupAutoMigratingCoreDataStack];
-}
-
-- (void) applicationDidFinishLaunching:(UIApplication *)application {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[MagicalRecord setupAutoMigratingCoreDataStack];
 	[Region initializeRegions];
-	[window addSubview:tabController.view];
+
+	return YES;
 }
 
 - (void) applicationWillEnterForeground:(UIApplication *)application {

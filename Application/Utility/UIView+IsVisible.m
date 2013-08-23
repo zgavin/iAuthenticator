@@ -14,12 +14,11 @@
 	if(self.hidden) return NO;
 	if(!self.window) return NO;
 	if(!self.superview) return NO;
-	if(self.superview == self.window) return YES;
 	
 	CGRect intersection = CGRectIntersection(self.frame, self.superview.bounds);
 	if(CGRectIsNull(intersection) || intersection.size.width == 0 || intersection.size.height == 0) return NO;
 	
-	return self.superview.visible;
+	return self.superview == self.window ?: self.superview.visible;
 }
 
 @end
