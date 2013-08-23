@@ -13,7 +13,20 @@
 
 @implementation SettingsController
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void) viewDidLoad {
+	[super viewDidLoad];
+	
+	[self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:30]} forState:UIControlStateNormal];
+	
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+		self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+	}
+	
 	[self refresh];
 	[table reloadData];
 }

@@ -20,11 +20,15 @@
 	[MagicalRecord setupAutoMigratingCoreDataStack];
 	[Region initializeRegions];
 
+	if ( [UIApplication.sharedApplication respondsToSelector:@selector(setMinimumBackgroundFetchInterval:)] ) [UIApplication.sharedApplication setMinimumBackgroundFetchInterval:10];
+	
 	return YES;
 }
 
-- (void) applicationWillEnterForeground:(UIApplication *)application {
+- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+	NSLog(@"performed in background called at %@",[NSDate date]);
 	
+	completionHandler(UIBackgroundFetchResultNewData);
 }
 
 
